@@ -1,3 +1,5 @@
+<!--Pratheep Chandrakumar N01376948 Section A-->
 <resources>
     <string name="app_name">OneHome</string>
+    <string name="Base_String">Welcome to OneHome App!</string>
 </resources>
