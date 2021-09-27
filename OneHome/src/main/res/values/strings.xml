@@ -1,6 +1,11 @@
 <!--Pratheep Chandrakumar N01376948 Section A-->
 <!--Dhruv Dave N01401657 Section A-->
+<!-- Utsav Sharma N01392141 Section A -->
+<!-- Sukhvir Singh Brar N01395820 Section A -->
 <resources>
     <string name="app_name">OneHome</string>
     <string name="Base_String">Welcome to OneHome App!</string>
+    <string name="exit_dialouge">Do you want to exit from the app?</string>
+    <string name="exit_yes">Yes</string>
+    <string name="exit_no">No</string>
 </resources>
