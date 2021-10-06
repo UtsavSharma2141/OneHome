@@ -8,4 +8,6 @@
     <string name="exit_dialouge">Do you want to exit from the app?</string>
     <string name="exit_yes">Yes</string>
     <string name="exit_no">No</string>
+    <string name="navigation_drawer_open" >Open Navigation Drawer</string>
+    <string name="navigation_drawer_close" >Close Navigation Drawer</string>
 </resources>

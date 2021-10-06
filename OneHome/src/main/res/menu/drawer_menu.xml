@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIN="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_temperature"
+            android:title="Temperature/Humidity"
+            android:icon="@drawable/ic_temperature_24dp">
+
+        </item>
+
+        <item android:id="@+id/nav_motion"
+            android:title="Motion"
+            android:icon="@drawable/ic_motion_24dp">
+
+        </item>
+
+        <item android:id="@+id/nav_curtain"
+            android:title="Curtain"
+            android:icon="@drawable/ic_curtain_24dp">
+
+        </item>
+
+        <item android:id="@+id/nav_setting"
+            android:title="Setting"
+            android:icon="@drawable/ic_settings_black_24dp">
+
+        </item>
+
+    </group>
+</menu>

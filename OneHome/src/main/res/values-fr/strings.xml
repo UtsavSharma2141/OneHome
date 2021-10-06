@@ -9,4 +9,6 @@
     <string name="exit_dialouge">Voulez-vous quitter lapplication?</string>
     <string name="exit_yes">Oui</string>
     <string name="exit_no">non</string>
+    <string name="navigation_drawer_open" >Open Navigation Drawer</string>
+    <string name="navigation_drawer_close" >Close Navigation Drawer</string>
 </resources>
