@@ -10,4 +10,6 @@
     <string name="exit_no">No</string>
     <string name="navigation_drawer_open" >Open Navigation Drawer</string>
     <string name="navigation_drawer_close" >Close Navigation Drawer</string>
+    <string name="OpenButton">Open</string>
+    <string name="CloseButton">Close</string>
 </resources>
