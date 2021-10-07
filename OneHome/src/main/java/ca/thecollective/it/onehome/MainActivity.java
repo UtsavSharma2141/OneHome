@@ -13,6 +13,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.DialogInterface;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -35,6 +36,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+//        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+//            setContentView(R.layout.activity_main);
+//
+//        }
 
         if(savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TemperatureFragment()).commit();
@@ -61,6 +67,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.nav_setting:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SettingFragment()).commit();
+                break;
+
+            case R.id.nav_display:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new DisplayFragment()).commit();
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

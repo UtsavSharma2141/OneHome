@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIN="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group
+        android:checkableBehavior="single"
+        >
         <item android:id="@+id/nav_temperature"
             android:title="Temperature/Humidity"
             android:icon="@drawable/ic_temperature_24dp">
@@ -19,6 +21,12 @@
         <item android:id="@+id/nav_curtain"
             android:title="Curtain"
             android:icon="@drawable/ic_curtain_24dp">
+
+        </item>
+
+        <item android:id="@+id/nav_display"
+            android:title="Display"
+            android:icon="@drawable/ic_smart_display_black_24dp">
 
         </item>
 
