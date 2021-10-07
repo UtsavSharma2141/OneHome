@@ -11,12 +11,14 @@
         android:theme="@style/Theme.OneHome">
         <activity android:name=".MainActivity"
             android:theme="@style/Theme.OneHome.NoActionbar"
-            android:configChanges="orientation|screenSize"
-            >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:configChanges="orientation|screenSize">
 
-                <category android:name="android.intent.category.LAUNCHER" />
+        </activity>
+
+        <activity android:name=".SplashActivity" android:theme="@style/Theme1.OneHome">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
     </application>
