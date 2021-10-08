@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,11 +8,10 @@
 
     <ImageView
         android:id="@+id/imageView_splash"
-        android:layout_width="409dp"
-        android:layout_height="720dp"
+        android:layout_width="730dp"
+        android:layout_height="399dp"
         app:srcCompat="@drawable/ic_splash4"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="4dp"
-        />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        tools:layout_editor_absoluteY="5dp" />
+</RelativeLayout>

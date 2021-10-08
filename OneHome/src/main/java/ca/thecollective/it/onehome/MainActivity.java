@@ -9,22 +9,46 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
+
+import static android.Manifest.permission.CAMERA;
+import static android.Manifest.permission.GET_ACCOUNTS;
+import static android.Manifest.permission.RECORD_AUDIO;
+import static android.Manifest.permission.SEND_SMS;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    public static final int RequestPermissionCode = 7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+         //If All permission is enabled successfully then this block will execute.
+        if(!CheckingPermissionIsEnabledOrNot())
+        {
+            RequestMultiplePermission();
+//            Toast.makeText(MainActivity.this, "All Permissions  Successfully Granted ", Toast.LENGTH_LONG).show();
+        }
+
+        // If, If permission is not enabled then else condition will execute.
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -42,11 +66,74 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //
 //        }
 
-        if(savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TemperatureFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_temperature);
+//        if(savedInstanceState == null) {
+//            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TemperatureFragment()).commit();
+//            navigationView.setCheckedItem(R.id.nav_temperature);
+//
+//        }
+    }
 
+    private void RequestMultiplePermission() {
+
+        // Creating String Array with Permissions.
+        ActivityCompat.requestPermissions(MainActivity.this, new String[]
+                {
+                        CAMERA,
+                        RECORD_AUDIO,
+                        SEND_SMS,
+                        GET_ACCOUNTS
+                }, RequestPermissionCode);
+
+    }
+
+    // Calling override method.
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+
+            case RequestPermissionCode:
+
+                if (grantResults.length > 0) {
+
+                    boolean CameraPermission = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                    boolean RecordAudioPermission = grantResults[1] == PackageManager.PERMISSION_GRANTED;
+                    boolean SendSMSPermission = grantResults[2] == PackageManager.PERMISSION_GRANTED;
+                    boolean GetAccountsPermission = grantResults[3] == PackageManager.PERMISSION_GRANTED;
+
+                    if (CameraPermission && RecordAudioPermission && SendSMSPermission && GetAccountsPermission) {
+                Snackbar snackbar = Snackbar
+                        .make(findViewById(R.id.coordinatorLayout), "All Permissions Granted ", Snackbar.LENGTH_LONG);
+                snackbar.show();
+                    } else {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(this).setMessage("We need permissions to use the functionality of the app ")
+                                .setPositiveButton("Okay", (dialog, which) -> {
+                                    RequestMultiplePermission();
+                                })
+                                .setNegativeButton("No", (dialog, which) -> {
+                                    dialog.dismiss();
+                                });
+                        builder.show();
+
+                    }
+
+                }
+
+                break;
         }
+    }
+
+    public boolean CheckingPermissionIsEnabledOrNot() {
+
+        int FirstPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), CAMERA);
+        int SecondPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), RECORD_AUDIO);
+        int ThirdPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), SEND_SMS);
+        int ForthPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), GET_ACCOUNTS);
+
+        return FirstPermissionResult == PackageManager.PERMISSION_GRANTED &&
+                SecondPermissionResult == PackageManager.PERMISSION_GRANTED &&
+                ThirdPermissionResult == PackageManager.PERMISSION_GRANTED &&
+                ForthPermissionResult == PackageManager.PERMISSION_GRANTED ;
     }
 
     @Override
