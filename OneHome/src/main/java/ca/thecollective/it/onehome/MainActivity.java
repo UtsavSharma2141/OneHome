@@ -22,6 +22,8 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Layout;
 import android.view.MenuItem;
+import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -66,11 +68,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //
 //        }
 
-//        if(savedInstanceState == null) {
-//            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TemperatureFragment()).commit();
-//            navigationView.setCheckedItem(R.id.nav_temperature);
-//
-//        }
+        if(savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TemperatureFragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_temperature);
+
+        }
     }
 
     private void RequestMultiplePermission() {

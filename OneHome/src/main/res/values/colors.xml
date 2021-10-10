@@ -16,4 +16,5 @@
     <color name="lightblue">#ADDFFF</color>
     <color name="brown">#D2B48C</color>
     <color name="yellowgreen">#a4c639</color>
+    <color name="back_colour">#eeeeee</color>
 </resources>
