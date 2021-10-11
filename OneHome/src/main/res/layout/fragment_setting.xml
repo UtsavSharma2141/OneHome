@@ -13,7 +13,9 @@
         android:layout_marginEnd="90sp"
         android:layout_marginBottom="630sp"
         android:gravity="center"
+        android:textColor="@color/amber"
         android:text="Settings"
+        android:fontFamily="@font/tommy_soft"
         android:textSize="30dp">
 
     </TextView>
@@ -28,6 +30,9 @@
         android:layout_marginStart="125sp"
         android:layout_marginEnd="125sp"
         android:layout_marginBottom="145sp"
+        android:textColor="@color/amber"
+        android:fontFamily="@font/tommy_soft"
+        android:backgroundTintMode="@color/white"
         android:text="Yes" />
 
     <RadioGroup
@@ -42,6 +47,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
+            android:textColor="@color/amber"
+            android:fontFamily="@font/tommy_soft"
             android:textSize="20sp"
             android:text="English" />
 
@@ -50,6 +57,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
+            android:textColor="@color/amber"
+            android:fontFamily="@font/tommy_soft"
             android:textSize="20sp"
             android:text="French" />
     </RadioGroup>
@@ -63,6 +72,8 @@
         android:layout_marginEnd="105sp"
         android:layout_marginBottom="210sp"
         android:gravity="center"
+        android:textColor="@color/amber"
+        android:fontFamily="@font/tommy_soft"
         android:text="Sign Out?"
         android:textSize="35sp" />
 
@@ -74,6 +85,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="0sp"
         android:layout_marginBottom="415dp"
+        android:textColor="@color/amber"
+        android:fontFamily="@font/tommy_soft"
         android:text="Change Language"
         android:textSize="25sp" />
 
@@ -81,10 +94,14 @@
         android:id="@+id/switch5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
         android:layout_marginBottom="490sp"
+        android:fontFamily="@font/tommy_soft"
         android:minHeight="50sp"
         android:text="Dark Mode"
+        android:textColor="@color/amber"
         android:textSize="25sp" />
 
     <Button
@@ -95,6 +112,9 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="145sp"
         android:layout_marginBottom="10sp"
+        android:textColor="@color/amber"
+        android:backgroundTintMode="@color/white"
+        android:fontFamily="@font/tommy_soft"
         android:text="Reset App" />
 
 </RelativeLayout>
