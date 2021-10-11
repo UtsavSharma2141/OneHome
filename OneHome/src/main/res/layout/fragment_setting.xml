@@ -14,14 +14,14 @@
         android:layout_marginBottom="630sp"
         android:gravity="center"
         android:textColor="@color/amber"
-        android:text="Settings"
+        android:text="@string/SettingsTitleText"
         android:fontFamily="@font/tommy_soft"
-        android:textSize="30dp">
+        android:textSize="30sp">
 
     </TextView>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/SignOutButton"
         android:layout_width="170sp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -33,7 +33,7 @@
         android:textColor="@color/amber"
         android:fontFamily="@font/tommy_soft"
         android:backgroundTintMode="@color/white"
-        android:text="Yes" />
+        android:text="@string/SignOutButton" />
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -43,28 +43,26 @@
         android:orientation="vertical">
 
         <RadioButton
-            android:id="@+id/radio_pirates"
+            android:id="@+id/EnglishRadio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onRadioButtonClicked"
             android:textColor="@color/amber"
             android:fontFamily="@font/tommy_soft"
             android:textSize="20sp"
-            android:text="English" />
+            android:text="@string/EnglishRadio" />
 
         <RadioButton
-            android:id="@+id/radio_ninjas"
+            android:id="@+id/FrenchRadio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onRadioButtonClicked"
             android:textColor="@color/amber"
             android:fontFamily="@font/tommy_soft"
             android:textSize="20sp"
-            android:text="French" />
+            android:text="@string/FrenchRadio" />
     </RadioGroup>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/SignOut"
         android:layout_width="210sp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -74,11 +72,11 @@
         android:gravity="center"
         android:textColor="@color/amber"
         android:fontFamily="@font/tommy_soft"
-        android:text="Sign Out?"
+        android:text="@string/SignOutText"
         android:textSize="35sp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/ChangeLan"
         android:layout_width="405sp"
         android:layout_height="35dp"
         android:layout_alignParentEnd="true"
@@ -87,11 +85,11 @@
         android:layout_marginBottom="415dp"
         android:textColor="@color/amber"
         android:fontFamily="@font/tommy_soft"
-        android:text="Change Language"
+        android:text="@string/ChangeLanguageText"
         android:textSize="25sp" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/switch5"
+        android:id="@+id/DarkModeSwitch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -100,12 +98,12 @@
         android:layout_marginBottom="490sp"
         android:fontFamily="@font/tommy_soft"
         android:minHeight="50sp"
-        android:text="Dark Mode"
+        android:text="@string/DarkModeText"
         android:textColor="@color/amber"
         android:textSize="25sp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/ResetButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -115,6 +113,6 @@
         android:textColor="@color/amber"
         android:backgroundTintMode="@color/white"
         android:fontFamily="@font/tommy_soft"
-        android:text="Reset App" />
+        android:text="@string/ResetAppButton" />
 
 </RelativeLayout>

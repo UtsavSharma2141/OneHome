@@ -13,5 +13,21 @@
     <string name="OpenButton">Open</string>
     <string name="CloseButton">Close</string>
     <string name="CurtainControl">Control opening and closing of Curtain by sliding.</string>
+    <string name="SignOutButton">Yes</string>
+    <string name="EnglishRadio">English</string>
+    <string name="FrenchRadio">French</string>
+    <string name="SignOutText">Sign Out?</string>
+    <string name="ChangeLanguageText">Change Language</string>
+    <string name="DarkModeText">Dark Mode</string>
+    <string name="ResetAppButton">Reset App</string>
+    <string name="SettingsTitleText">Settings</string>
+    <string name="LCDTitle">LCD Display Settings</string>
+    <string name="LcdOption1">Turn LCD On</string>
+    <string name="LcdOption2">Display Motion</string>
+    <string name="LcdOption3">Display Temperature</string>
+    <string name="LcdOption4">Display Curtain Status</string>
+    <string name="LcdOption5">Display Custom Text</string>
+    <string name="InputLcd">Enter Text to Display (Max 12 char)</string>
+    <string name="EnterButtonText">Enter</string>
 
 </resources>
