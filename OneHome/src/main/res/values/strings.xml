@@ -12,4 +12,6 @@
     <string name="navigation_drawer_close" >Close Navigation Drawer</string>
     <string name="OpenButton">Open</string>
     <string name="CloseButton">Close</string>
+    <string name="CurtainControl">Control opening and closing of Curtain by sliding.</string>
+
 </resources>
