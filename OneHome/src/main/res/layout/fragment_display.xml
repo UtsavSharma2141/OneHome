@@ -125,5 +125,13 @@
         android:fontFamily="@font/pixel_font"
         android:text="@string/EnterButtonText" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="343dp"
+        app:srcCompat="@drawable/lcd_display" />
+
 
 </RelativeLayout>
