@@ -13,4 +13,21 @@
     <string name="navigation_drawer_close" >Fermer le tiroir de navigation</string>
     <string name="OpenButton">Ouvert</string>
     <string name="CloseButton">proche</string>
+    <string name="SignOutButton">Oui</string>
+    <string name="EnglishRadio">English</string>
+    <string name="FrenchRadio">French</string>
+    <string name="SignOutText">" Se déconnecter?"</string>
+    <string name="ChangeLanguageText">Changer de Langue</string>
+    <string name="DarkModeText">Mode Sombre</string>
+    <string name="CurtainControl">Commande d\'ouverture et de fermeture de Rideau par coulissement.</string>
+    <string name="ResetAppButton">Réinitialiser l\'application</string>
+    <string name="SettingsTitleText">" Paramètres"</string>
+    <string name="LCDTitle">Paramètres d\'affichage à cristaux liquides</string>
+    <string name="LcdOption1">" Allumer l'écran LCD"</string>
+    <string name="LcdOption2">Mouvement d\'affichage</string>
+    <string name="LcdOption3">Affichage de la température</string>
+    <string name="LcdOption4">" Afficher l'état du rideau"</string>
+    <string name="LcdOption5">" Afficher le texte personnalisé"</string>
+    <string name="InputLcd">" Saisir le texte à afficher (12 caractères maximum)"</string>
+    <string name="EnterButtonText">Entrer</string>
 </resources>
