@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "794565371905",
+    "project_id": "onehome-f48e1",
+    "storage_bucket": "onehome-f48e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794565371905:android:134f277cf379b36895f800",
+        "android_client_info": {
+          "package_name": "ca.thecollective.it.onehome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794565371905-i1rs9722a5icnvodkmrfrpo97k4pv2ni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE62JG5onx7LW9v1uy0ZQgL0HZoWcHDZ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794565371905-i1rs9722a5icnvodkmrfrpo97k4pv2ni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

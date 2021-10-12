@@ -20,6 +20,7 @@ import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.Message;
 import android.text.Layout;
 import android.view.MenuItem;
 import android.widget.SeekBar;
@@ -28,6 +29,11 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import static android.Manifest.permission.CAMERA;
 import static android.Manifest.permission.GET_ACCOUNTS;
@@ -36,11 +42,17 @@ import static android.Manifest.permission.SEND_SMS;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static final int RequestPermissionCode = 7;
+    TextView msgTxt;
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference mrootReference = firebaseDatabase.getReference();
+    private DatabaseReference mchildReference = mrootReference.child("message");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+         msgTxt = findViewById(R.id.welcome_screen_message);
 
          //If All permission is enabled successfully then this block will execute.
         if(!CheckingPermissionIsEnabledOrNot())
@@ -199,5 +211,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             dialog.show();
         }
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        mchildReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String message = snapshot.getValue(String.class);
+                msgTxt.setText(message);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }
