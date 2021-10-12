@@ -22,17 +22,25 @@
         android:id="@+id/coordinatorLayout"
         >
 
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:layout_marginTop="350dp"-->
-<!--            android:text="@string/Base_String"-->
-<!--            android:gravity="center"-->
-<!--            android:textSize="30dp"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textStyle="bold">-->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/home_image"
+            >
 
-<!--        </TextView>-->
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="500dp"
+            android:text="@string/Base_String"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:textStyle="bold">
+
+        </TextView>
 
         
         <androidx.appcompat.widget.Toolbar
