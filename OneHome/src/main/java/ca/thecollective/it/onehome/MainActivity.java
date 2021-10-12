@@ -63,11 +63,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-//        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-//            setContentView(R.layout.activity_main);
-//
-//        }
-
         if(savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TemperatureFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_temperature);
@@ -105,14 +100,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                     if (CameraPermission && RecordAudioPermission && SendSMSPermission && GetAccountsPermission) {
                 Snackbar snackbar = Snackbar
-                        .make(findViewById(R.id.coordinatorLayout), "All Permissions Granted ", Snackbar.LENGTH_LONG);
+                        .make(findViewById(R.id.coordinatorLayout), R.string.snackbar_granted_permissions, Snackbar.LENGTH_LONG);
                 snackbar.show();
                     } else {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(this).setMessage("We need permissions to use the functionality of the app ")
-                                .setPositiveButton("Okay", (dialog, which) -> {
+                        Snackbar snackbar = Snackbar
+                                .make(findViewById(R.id.coordinatorLayout), R.string.snackbar_denied_permissions, Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                        AlertDialog.Builder builder = new AlertDialog.Builder(this).setMessage(R.string.alertbar_permissions)
+                                .setPositiveButton(R.string.alertbar_ok, (dialog, which) -> {
                                     RequestMultiplePermission();
                                 })
-                                .setNegativeButton("No", (dialog, which) -> {
+                                .setNegativeButton(R.string.alertbar_no, (dialog, which) -> {
                                     dialog.dismiss();
                                 });
                         builder.show();
@@ -144,22 +142,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()){
             case R.id.nav_temperature:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TemperatureFragment()).commit();
+                getSupportActionBar().setTitle(R.string.temperature_humidity_menu);
                 break;
 
             case R.id.nav_motion:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MotionFragment()).commit();
+                getSupportActionBar().setTitle(R.string.motion_menu);
                 break;
 
             case R.id.nav_curtain:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CurtainFragment()).commit();
+                getSupportActionBar().setTitle(R.string.curtain_menu);
                 break;
 
             case R.id.nav_setting:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SettingFragment()).commit();
+                getSupportActionBar().setTitle(R.string.setting_menu);
                 break;
 
             case R.id.nav_display:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new DisplayFragment()).commit();
+                getSupportActionBar().setTitle(R.string.display_menu);
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);
@@ -175,7 +178,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             //super.onBackPressed();
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setCancelable(false);
-            builder.setTitle("Confirm Your Exit!!");
+            builder.setTitle(R.string.alertbar_confirm_exit);
             builder.setMessage(R.string.exit_dialouge);
             builder.setIcon(R.drawable.ic_action_exit);
             builder.setPositiveButton(R.string.exit_yes, new DialogInterface.OnClickListener() {

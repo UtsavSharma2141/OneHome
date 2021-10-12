@@ -30,4 +30,22 @@
     <string name="LcdOption5">" Afficher le texte personnalisé"</string>
     <string name="InputLcd">" Saisir le texte à afficher (12 caractères maximum)"</string>
     <string name="EnterButtonText">Entrer</string>
+    <string name="temperature_label">Temperature</string>
+    <string name="humidity_label">Humidity</string>
+    <string name="alert_label">Alert</string>
+    <string name="readings_label">Readings</string>
+    <string name="snackbar_granted_permissions">\"All Permissions Granted \"</string>
+    <string name="alertbar_permissions">\"We need permissions to use the functionality of the app \"</string>
+    <string name="alertbar_confirm_exit">Confirm Your Exit!!</string>
+    <string name="temperature_humidity_menu">Temperature/Humidity</string>
+    <string name="motion_menu">Motion</string>
+    <string name="curtain_menu">Curtain</string>
+    <string name="display_menu">Display</string>
+    <string name="setting_menu">Setting</string>
+    <string name="set_temperature_threshhold">Set Temperature Threshhold</string>
+    <string name="alert_me">Alert me</string>
+    <string name="set_humidity_threshhold">Set Humidity Threshhold</string>
+    <string name="alertbar_ok">Okay</string>
+    <string name="alertbar_no">No</string>
+    <string name="snackbar_denied_permissions">\"Permissions Denied \"</string>
 </resources>

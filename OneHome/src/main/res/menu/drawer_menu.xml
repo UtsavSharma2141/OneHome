@@ -7,31 +7,31 @@
         android:checkableBehavior="single"
         >
         <item android:id="@+id/nav_temperature"
-            android:title="Temperature/Humidity"
+            android:title="@string/temperature_humidity_menu"
             android:icon="@drawable/ic_temperature_24dp">
 
         </item>
 
         <item android:id="@+id/nav_motion"
-            android:title="Motion"
+            android:title="@string/motion_menu"
             android:icon="@drawable/ic_motion_24dp">
 
         </item>
 
         <item android:id="@+id/nav_curtain"
-            android:title="Curtain"
+            android:title="@string/curtain_menu"
             android:icon="@drawable/ic_curtain_24dp">
 
         </item>
 
         <item android:id="@+id/nav_display"
-            android:title="Display"
+            android:title="@string/display_menu"
             android:icon="@drawable/ic_smart_display_black_24dp">
 
         </item>
 
         <item android:id="@+id/nav_setting"
-            android:title="Setting"
+            android:title="@string/setting_menu"
             android:icon="@drawable/ic_settings_black_24dp">
 
         </item>
