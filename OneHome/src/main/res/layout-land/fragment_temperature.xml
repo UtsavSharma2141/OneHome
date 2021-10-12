@@ -143,15 +143,15 @@
         </LinearLayout>
 
         <Switch
+            android:text="@string/alert_me"
+            android:paddingTop="10dp"
+            android:textSize="20sp"
+            android:textAlignment="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="250dp"
-            android:paddingTop="10dp"
-            android:text="@string/alert_me"
-            android:textAlignment="center"
-            android:textSize="20sp"
 
-            tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck">
+            tools:ignore="UseSwitchCompatOrMaterialXml">
 
         </Switch>
 
@@ -191,15 +191,15 @@
         </LinearLayout>
 
         <Switch
+            android:text="@string/alert_me"
+            android:paddingTop="10dp"
+            android:textSize="20sp"
+            android:textAlignment="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="250dp"
-            android:paddingTop="10dp"
-            android:text="@string/alert_me"
-            android:textAlignment="center"
-            android:textSize="20sp"
 
-            tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck">
+            tools:ignore="UseSwitchCompatOrMaterialXml">
 
         </Switch>
 
