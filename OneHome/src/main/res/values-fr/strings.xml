@@ -38,14 +38,16 @@
     <string name="alertbar_permissions">\"We need permissions to use the functionality of the app \"</string>
     <string name="alertbar_confirm_exit">Confirm Your Exit!!</string>
     <string name="temperature_humidity_menu">Temperature/Humidity</string>
-    <string name="motion_menu">Motion</string>
-    <string name="curtain_menu">Curtain</string>
-    <string name="display_menu">Display</string>
-    <string name="setting_menu">Setting</string>
-    <string name="set_temperature_threshhold">Set Temperature Threshhold</string>
-    <string name="alert_me">Alert me</string>
-    <string name="set_humidity_threshhold">Set Humidity Threshhold</string>
-    <string name="alertbar_ok">Okay</string>
-    <string name="alertbar_no">No</string>
-    <string name="snackbar_denied_permissions">\"Permissions Denied \"</string>
+    <string name="motion_menu">Mouvement</string>
+    <string name="curtain_menu">Rideau</string>
+    <string name="display_menu">Affichage</string>
+    <string name="setting_menu">Réglage</string>
+    <string name="set_temperature_threshhold">Définir le seuil de température</string>
+    <string name="alert_me">Alerte moi</string>
+    <string name="set_humidity_threshhold">Définir le seuil d\'humidité</string>
+    <string name="alertbar_ok">D\'accord</string>
+    <string name="alertbar_no">Non</string>
+    <string name="snackbar_denied_permissions">\"Autorisations refusées \"</string>
+    <string name="LockScreenOption">Verrouiller l\'écran en portrait</string>
+    <string name="LockScreenButton">Écran verrouillé</string>
 </resources>

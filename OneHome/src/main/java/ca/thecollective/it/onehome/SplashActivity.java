@@ -1,3 +1,7 @@
+/* Utsav Sharma N01392141 Section A*/
+/* Dhruv Dave N01401657 Section A
+/* Sukhvir Brar N01395820 Section A
+* Pratheep Chandrakumar N01376948 Section A*/
 package ca.thecollective.it.onehome;
 
 import android.content.Intent;
