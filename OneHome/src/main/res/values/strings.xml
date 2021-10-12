@@ -47,5 +47,7 @@
     <string name="alertbar_ok">Okay</string>
     <string name="alertbar_no">No</string>
     <string name="alertbar_confirm_exit">Confirm Your Exit!!</string>
+    <string name="LockScreenOption">Lock Screen to Portrait</string>
+    <string name="LockScreenButton">LockScreen</string>
 
 </resources>

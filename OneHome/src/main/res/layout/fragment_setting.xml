@@ -27,13 +27,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="125sp"
-        android:layout_marginEnd="125sp"
-        android:layout_marginBottom="145sp"
-        android:textColor="@color/amber"
-        android:fontFamily="@font/tommy_soft"
+        android:layout_marginStart="125dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginBottom="110dp"
         android:backgroundTintMode="@color/white"
-        android:text="@string/SignOutButton" />
+        android:fontFamily="@font/tommy_soft"
+        android:text="@string/SignOutButton"
+        android:textColor="@color/amber" />
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -67,12 +67,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="105sp"
-        android:layout_marginBottom="210sp"
-        android:gravity="center"
-        android:textColor="@color/amber"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="170dp"
         android:fontFamily="@font/tommy_soft"
+        android:gravity="center"
         android:text="@string/SignOutText"
+        android:textColor="@color/amber"
         android:textSize="35sp" />
 
     <TextView
@@ -114,5 +114,28 @@
         android:backgroundTintMode="@color/white"
         android:fontFamily="@font/tommy_soft"
         android:text="@string/ResetAppButton" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="251dp"
+        android:text="@string/LockScreenButton" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="234dp"
+        android:layout_height="36dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="167dp"
+        android:layout_marginBottom="251dp"
+        android:fontFamily="@font/tommy_soft"
+        android:text="@string/LockScreenOption"
+        android:textColor="@color/amber"
+        android:textSize="22sp" />
 
 </RelativeLayout>
