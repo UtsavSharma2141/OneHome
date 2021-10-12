@@ -50,4 +50,6 @@
     <string name="snackbar_denied_permissions">\"Autorisations refusées \"</string>
     <string name="LockScreenOption">Verrouiller l\'écran en portrait</string>
     <string name="LockScreenButton">Écran verrouillé</string>
+    <string name="permissions2">Permission Required</string>
+    <string name="permissions3">Permission is needed to access files from your device...</string>
 </resources>

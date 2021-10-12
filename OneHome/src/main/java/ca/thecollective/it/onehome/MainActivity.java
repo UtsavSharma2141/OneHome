@@ -15,13 +15,18 @@ import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Message;
 import android.text.Layout;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -35,13 +40,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import static android.Manifest.permission.CALL_PHONE;
 import static android.Manifest.permission.CAMERA;
 import static android.Manifest.permission.GET_ACCOUNTS;
+import static android.Manifest.permission.INTERNET;
 import static android.Manifest.permission.RECORD_AUDIO;
 import static android.Manifest.permission.SEND_SMS;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    public static final int RequestPermissionCode = 7;
+    public static int REQUEST_PERMISSION=1;
     TextView msgTxt;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference mrootReference = firebaseDatabase.getReference();
@@ -52,26 +59,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-         msgTxt = findViewById(R.id.welcome_screen_message);
-
-         //If All permission is enabled successfully then this block will execute.
-        if(!CheckingPermissionIsEnabledOrNot())
-        {
-            RequestMultiplePermission();
-//            Toast.makeText(MainActivity.this, "All Permissions  Successfully Granted ", Toast.LENGTH_LONG).show();
-        }
-
-        // If, If permission is not enabled then else condition will execute.
-
+        msgTxt = findViewById(R.id.welcome_screen_message);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-       DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -82,76 +79,43 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        }
     }
 
-    private void RequestMultiplePermission() {
 
-        // Creating String Array with Permissions.
-        ActivityCompat.requestPermissions(MainActivity.this, new String[]
-                {
-                        CAMERA,
-                        RECORD_AUDIO,
-                        SEND_SMS,
-                        GET_ACCOUNTS
-                }, RequestPermissionCode);
-
-    }
-
-    // Calling override method.
     @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-
-            case RequestPermissionCode:
-
-                if (grantResults.length > 0) {
-
-                    boolean CameraPermission = grantResults[0] == PackageManager.PERMISSION_GRANTED;
-                    boolean RecordAudioPermission = grantResults[1] == PackageManager.PERMISSION_GRANTED;
-                    boolean SendSMSPermission = grantResults[2] == PackageManager.PERMISSION_GRANTED;
-                    boolean GetAccountsPermission = grantResults[3] == PackageManager.PERMISSION_GRANTED;
-
-                    if (CameraPermission && RecordAudioPermission && SendSMSPermission && GetAccountsPermission) {
-                Snackbar snackbar = Snackbar
-                        .make(findViewById(R.id.coordinatorLayout), R.string.snackbar_granted_permissions, Snackbar.LENGTH_LONG);
-                snackbar.show();
-                    } else {
-                        Snackbar snackbar = Snackbar
-                                .make(findViewById(R.id.coordinatorLayout), R.string.snackbar_denied_permissions, Snackbar.LENGTH_LONG);
-                        snackbar.show();
-                        AlertDialog.Builder builder = new AlertDialog.Builder(this).setMessage(R.string.alertbar_permissions)
-                                .setPositiveButton(R.string.alertbar_ok, (dialog, which) -> {
-                                    RequestMultiplePermission();
-                                })
-                                .setNegativeButton(R.string.alertbar_no, (dialog, which) -> {
-                                    dialog.dismiss();
-                                });
-                        builder.show();
-
-                    }
-
-                }
-
-                break;
-        }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu2, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
-    public boolean CheckingPermissionIsEnabledOrNot() {
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        int FirstPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), CAMERA);
-        int SecondPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), RECORD_AUDIO);
-        int ThirdPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), SEND_SMS);
-        int ForthPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), GET_ACCOUNTS);
+        switch (item.getItemId()) {
 
-        return FirstPermissionResult == PackageManager.PERMISSION_GRANTED &&
-                SecondPermissionResult == PackageManager.PERMISSION_GRANTED &&
-                ThirdPermissionResult == PackageManager.PERMISSION_GRANTED &&
-                ForthPermissionResult == PackageManager.PERMISSION_GRANTED ;
+            case R.id.menu_aboutus:
+
+                return true;
+
+            case R.id.menu_contactus:
+                permission_fn();
+                return true;
+
+            case R.id.menu_feedback:
+
+                return true;
+
+            case R.id.menu_usefullinks:
+                return true;
+
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.nav_temperature:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TemperatureFragment()).commit();
                 getSupportActionBar().setTitle(R.string.temperature_humidity_menu);
@@ -184,9 +148,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        if(drawer.isDrawerOpen(GravityCompat.START)){
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        }else {
+        } else {
             //super.onBackPressed();
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setCancelable(false);
@@ -213,22 +177,73 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        mchildReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String message = snapshot.getValue(String.class);
-                msgTxt.setText(message);
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+    private  void requestCallPermission()
+    {
+        if(ActivityCompat.shouldShowRequestPermissionRationale(this, CALL_PHONE))
+        {
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.permissions2)
+                    .setMessage(R.string.permissions3)
+                    .setPositiveButton(R.string.alertbar_ok, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            ActivityCompat.requestPermissions(MainActivity.this,new String[]{CALL_PHONE},REQUEST_PERMISSION);
+                        }
+                    })
+                    .setNegativeButton(R.string.alertbar_no, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    }).create().show();
+        }
+        else
+        {
+            ActivityCompat.requestPermissions(this,new String[]{CALL_PHONE},REQUEST_PERMISSION);
+        }
     }
+
+    private void permission_fn()
+    {
+        if(ContextCompat.checkSelfPermission(MainActivity.this, CALL_PHONE)== PackageManager.PERMISSION_GRANTED)
+        {
+            startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:6476199611")));
+
+            if(ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, CALL_PHONE))
+            {
+
+            }
+            else
+            {
+                ActivityCompat.requestPermissions(this,new String[]{CALL_PHONE},REQUEST_PERMISSION);
+
+            }
+        }
+        else {
+
+            requestCallPermission();
+
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions,  int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUEST_PERMISSION) {
+
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Snackbar snackbar = Snackbar.make(findViewById(R.id.coordinatorLayout), R.string.snackbar_granted_permissions, Snackbar.LENGTH_LONG);
+                snackbar.show();
+
+            } else {
+
+                Snackbar snackbar = Snackbar.make(findViewById(R.id.coordinatorLayout), R.string.snackbar_denied_permissions, Snackbar.LENGTH_LONG);
+                snackbar.show();
+
+
+            }
+        }
+    }
+
+
 }
