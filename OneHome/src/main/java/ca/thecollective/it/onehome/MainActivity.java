@@ -72,11 +72,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-//        if(savedInstanceState == null) {
-//            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TemperatureFragment()).commit();
-//            navigationView.setCheckedItem(R.id.nav_temperature);
-//
-//        }
+        if(savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TemperatureFragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_temperature);
+
+        }
     }
 
 
@@ -101,6 +101,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return true;
 
             case R.id.menu_feedback:
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                emailIntent.setData(Uri.parse("mailto:abc@xyz.com"));
+                startActivity(Intent.createChooser(emailIntent, "Send feedback"));
 
                 return true;
 
@@ -242,6 +245,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
             }
+        }
+    }
+
+    public void composeEmail(String[] addresses, String subject) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto: utsav.sharma1211@gmail.com")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_EMAIL, addresses);
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
         }
     }
 
