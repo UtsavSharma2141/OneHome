@@ -21,14 +21,14 @@
 
 
     <item android:id="@+id/menu_usefullinks"
-        android:title="Useful Links"
+        android:title="Useful Tips"
         app:showAsAction="withText"
         >
 
     </item>
 
     <item android:id="@+id/menu_aboutus"
-        android:title="About Us"
+        android:title="Share the App"
         app:showAsAction="never"
         >
 
