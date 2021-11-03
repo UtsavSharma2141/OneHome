@@ -51,5 +51,11 @@
     <string name="LockScreenButton">LockScreen</string>
     <string name="permissions2">Permission Required</string>
     <string name="permissions3">Permission is needed to call the help number</string>
+    <string name="contact_us_menu2">Contact Us</string>
+    <string name="feedback_menu2">Feedback</string>
+    <string name="useful_tips_menu">Useful Tips</string>
+    <string name="share_the_app_menu2">Share the App</string>
+    <string name="feedback_menu">Send feedback</string>
+    <string name="app_link">The app link is availble when we publish app on the playstore.</string>
 
 </resources>

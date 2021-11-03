@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.menu_aboutus:
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "The app link is availble when we publish app on the playstore.");
+                sendIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.app_link));
                 sendIntent.setType("text/plain");
 
                 Intent shareIntent = Intent.createChooser(sendIntent, null);
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.menu_feedback:
                 Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
                 emailIntent.setData(Uri.parse("mailto:feedback@onehome.ca"));
-                startActivity(Intent.createChooser(emailIntent, "Send feedback"));
+                startActivity(Intent.createChooser(emailIntent, getString(R.string.feedback_menu)));
 
                 return true;
 
