@@ -35,6 +35,10 @@ public class TemperatureFragment extends Fragment {
     private DatabaseReference mrootReference = firebaseDatabase.getReference();
     private DatabaseReference mchildReference = mrootReference.child("message");
 
+    private FirebaseDatabase firebaseDatabase2 = FirebaseDatabase.getInstance();
+    private DatabaseReference mrootReference2 = firebaseDatabase.getReference();
+    private DatabaseReference mchildReference2 = mrootReference.child("message2");
+
 
     @Nullable
     @Override
@@ -63,8 +67,8 @@ public class TemperatureFragment extends Fragment {
         mchildReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String message = snapshot.getValue(String.class);
-                temperature.setText(message);
+                Integer message = snapshot.getValue(Integer.class);
+                temperature.setText( message+ "°C");
 
 
             }
@@ -74,5 +78,22 @@ public class TemperatureFragment extends Fragment {
 
             }
         });
+
+        mchildReference2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                Integer message2 = snapshot.getValue(Integer.class);
+                humidity.setText( message2 + "%");
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
+
 }
