@@ -59,10 +59,10 @@
                     />
 
                 <TextView
+                    android:id="@+id/live_temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/temperature_label"
                     android:textSize="30sp"
                     android:layout_gravity="center_vertical"
                     android:gravity="center"
@@ -93,10 +93,10 @@
                     />
 
                 <TextView
+                    android:id="@+id/live_humidity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/humidity_label"
                     android:textSize="30sp"
                     android:layout_gravity="center_vertical"
                     android:gravity="center"
