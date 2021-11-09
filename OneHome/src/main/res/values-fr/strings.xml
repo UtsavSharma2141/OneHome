@@ -51,11 +51,13 @@
     <string name="LockScreenOption">Verrouiller l\'écran en portrait</string>
     <string name="LockScreenButton">Écran verrouillé</string>
     <string name="permissions2">Autorisation requise</string>
-    <string name="permissions3">Une autorisation est nécessaire pour accéder aux fichiers de votre appareil...</string>
+    <string name="permissions3">Une autorisation est nécessaire pour accéder aux fichiers de votre appareil…</string>
     <string name="contact_us_menu2">Nous contacter</string>
     <string name="feedback_menu2">Retour d information</string>
     <string name="useful_tips_menu">Conseils utiles</string>
     <string name="share_the_app_menu2">Partager l application</string>
     <string name="feedback_menu">Envoyer des commentaires</string>
     <string name="app_link">Le lien de l application est disponible lorsque nous publions l application sur le Playstore.</string>
+    <string name="curtain_header">Commandes de rideaux</string>
+    <string name="imageofcurtain">Image de rideau</string>
 </resources>

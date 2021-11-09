@@ -56,6 +56,8 @@
     <string name="useful_tips_menu">Useful Tips</string>
     <string name="share_the_app_menu2">Share the App</string>
     <string name="feedback_menu">Send feedback</string>
-    <string name="app_link">The app link is availble when we publish app on the playstore.</string>
+    <string name="app_link">The app link is available when we publish app on the playstore.</string>
+    <string name="curtain_header">Controls</string>
+    <string name="imageofcurtain">Image of Curtain</string>
 
 </resources>
