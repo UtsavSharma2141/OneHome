@@ -40,6 +40,7 @@ public class TemperatureFragment extends Fragment {
     private DatabaseReference mchildReference2 = mrootReference.child("message2");
 
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
