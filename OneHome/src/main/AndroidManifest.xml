@@ -2,15 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="ca.thecollective.it.onehome">
+
     <uses-permission android:name="android.permission.CAMERA" />
-
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-
-    <uses-permission android:name="android.permission.SEND_SMS"/>
-
-    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -19,19 +16,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OneHome">
-        <activity android:name=".MainActivity"
-            android:theme="@style/Theme.OneHome.NoActionbar"
-            android:configChanges="orientation|screenSize">
-
-        </activity>
-
-        <activity android:name=".SplashActivity" android:theme="@style/Theme1.OneHome">
+        <activity android:name=".ReviewUs"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.OneHome.NoActionbar"></activity>
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/Theme1.OneHome">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 
 </manifest>

@@ -4,6 +4,7 @@
 * Pratheep Chandrakumar N01376948 Section A*/
 package ca.thecollective.it.onehome;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,6 +35,8 @@ import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -58,6 +61,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private final String CHANNEL_ID = "Notification";
     private final int NOTIFICATION_ID =001;
     TextView msgTxt;
+    Button rateusButton;
+
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference mrootReference = firebaseDatabase.getReference();
     private DatabaseReference mchildReference = mrootReference.child("message");
@@ -66,6 +71,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        rateusButton = findViewById(R.id.review_us);
 
         msgTxt = findViewById(R.id.welcome_screen_message);
 
@@ -80,11 +87,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        if(savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TemperatureFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_temperature);
+        rateusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ReviewUs.class));
 
-        }
+            }
+        });
+
+//        if(savedInstanceState == null) {
+//            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TemperatureFragment()).commit();
+//            navigationView.setCheckedItem(R.id.nav_temperature);
+//
+//        }
     }
 
 
