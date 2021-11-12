@@ -53,11 +53,11 @@
                 android:layout_height="100dp"
                 android:padding="10dp"
                 android:background="@color/bac_2">
+
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/temp_icon"
-                    />
+                    android:src="@drawable/temp_icon" />
 
                 <TextView
                     android:id="@+id/live_temp"

@@ -37,6 +37,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -67,6 +68,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DatabaseReference mrootReference = firebaseDatabase.getReference();
     private DatabaseReference mchildReference = mrootReference.child("message");
 
+
+    NavigationView navV;
+
+    ImageView imgHead;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,6 +92,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        navV = findViewById(R.id.nav_view);
+
+        View imgView = navV.getHeaderView(0);
+        imgHead = imgView.findViewById(R.id.headImg);
+
+        imgView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(MainActivity.this,MainActivity.class));
+            }
+        });
 
         rateusButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -211,6 +230,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
     }
+
 
     private  void requestCallPermission()
     {
