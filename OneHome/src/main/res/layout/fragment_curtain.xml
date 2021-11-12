@@ -7,8 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/lightblue"
-    >
+    android:background="@drawable/curtainbackground">
 
 
     <TextView
@@ -18,14 +17,15 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="134dp"
-        android:layout_marginTop="49dp"
-        android:layout_marginEnd="125dp"
-        android:layout_marginBottom="620dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="107dp"
+        android:layout_marginBottom="519dp"
         android:text="@string/curtain_header"
-        android:textColor="@color/purple_700"
+        android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold" />
+
 
     <Button
         android:id="@+id/OpenButton"
@@ -33,10 +33,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="257dp"
+        android:layout_marginEnd="246dp"
         android:layout_marginBottom="228dp"
-        android:text="@string/OpenButton" />
-
+        android:text="@string/OpenButton"></Button>
 
     <Button
         android:id="@+id/CloseButton"
@@ -44,18 +43,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="74dp"
+        android:layout_marginEnd="45dp"
         android:layout_marginBottom="228dp"
         android:text="@string/CloseButton" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="282dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="301dp"
-        android:contentDescription="@string/imageofcurtain"
-        app:srcCompat="@drawable/curtain" />
 
     <TextView
         android:id="@+id/CurtainOpeningSelection"
@@ -66,7 +56,7 @@
         android:layout_marginEnd="26dp"
         android:layout_marginBottom="149dp"
         android:text="@string/CurtainControl"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 
 
