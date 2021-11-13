@@ -115,7 +115,8 @@
         android:layout_marginEnd="105sp"
         android:layout_marginBottom="20sp"
         android:textColor="@color/green"
-        android:hint="@string/InputLcd" />
+        android:hint="@string/InputLcd"
+        android:maxLength="12"/>
 
     <Button
         android:id="@+id/EnterButton"

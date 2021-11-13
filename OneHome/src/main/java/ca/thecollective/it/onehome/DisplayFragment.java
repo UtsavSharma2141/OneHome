@@ -10,8 +10,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
@@ -31,8 +33,11 @@ public class DisplayFragment extends Fragment {
     Switch switch2;
     Switch switch3;
     Switch switch4;
+    Button EnterButton;
     CheckBox checkBox1;
     View.OnClickListener mOnClickListener;
+    EditText Text;
+    String TextValue;
 
     @Nullable
     @Override
@@ -42,6 +47,8 @@ public class DisplayFragment extends Fragment {
         switch2 = (Switch)getView().findViewById(R.id.option3);
         switch3 = (Switch)getView().findViewById(R.id.option4);
         switch4 = (Switch)getView().findViewById(R.id.option5);
+        EnterButton = (Button)getView().findViewById(R.id.EnterButton);
+
 
         //onclick for undo snackbar button
         mOnClickListener= new View.OnClickListener() {
@@ -51,7 +58,7 @@ public class DisplayFragment extends Fragment {
             }
         };
 
-
+        //checkbox code
         checkBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -79,7 +86,7 @@ public class DisplayFragment extends Fragment {
 
 
 
-
+        //switches code
         switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -144,6 +151,19 @@ public class DisplayFragment extends Fragment {
                     // Show the switch button checked status as toast message
                     Toast.makeText(getActivity(),
                             "Custom Text Display Off", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        //enterbutton code
+        EnterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextValue = Text.getText().toString();
+                if(Text.getText().toString().isEmpty()){
+                    Toast.makeText(getActivity(),"Text Box is Empty",Toast.LENGTH_LONG);
+                }else{
+                    Toast.makeText(getActivity(),"Text: "+ TextValue +"\n is sent to display",Toast.LENGTH_LONG);
                 }
             }
         });
