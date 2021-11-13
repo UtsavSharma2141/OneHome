@@ -161,9 +161,12 @@ public class DisplayFragment extends Fragment {
             public void onClick(View v) {
                 TextValue = Text.getText().toString();
                 if(Text.getText().toString().isEmpty()){
-                    Toast.makeText(getActivity(),"Text Box is Empty",Toast.LENGTH_LONG);
-                }else{
-                    Toast.makeText(getActivity(),"Text: "+ TextValue +"\n is sent to display",Toast.LENGTH_LONG);
+                    //if textbox is empty
+                    Toast.makeText(getActivity(),"Text Box is Empty",Toast.LENGTH_LONG).show();
+                }
+                else{
+                    //if textbox is not empty
+                    Toast.makeText(getActivity(),"Text: "+ TextValue +"\n is sent to display",Toast.LENGTH_LONG).show();
                 }
             }
         });
