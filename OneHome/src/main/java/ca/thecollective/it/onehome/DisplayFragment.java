@@ -10,7 +10,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -25,15 +27,37 @@ public class DisplayFragment extends Fragment {
     Switch switch2;
     Switch switch3;
     Switch switch4;
+    CheckBox checkBox1;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        switch1 = (Switch) getView().findViewById(R.id.option2);
-        switch2 = (Switch) getView().findViewById(R.id.option3);
-        switch3 = (Switch) getView().findViewById(R.id.option4);
-        switch4 = (Switch) getView().findViewById(R.id.option5);
+        checkBox1 = (CheckBox)getView().findViewById(R.id.option1);
+        switch1 = (Switch)getView().findViewById(R.id.option2);
+        switch2 = (Switch)getView().findViewById(R.id.option3);
+        switch3 = (Switch)getView().findViewById(R.id.option4);
+        switch4 = (Switch)getView().findViewById(R.id.option5);
 
+        checkBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    //enable switches
+                    switch1.setEnabled(true);
+                    switch2.setEnabled(true);
+                    switch3.setEnabled(true);
+                    switch4.setEnabled(true);
+
+                    //show snackbar
+                }else{
+                    //disable switches
+                    switch1.setEnabled(false);
+                    switch2.setEnabled(false);
+                    switch3.setEnabled(false);
+                    switch4.setEnabled(false);
+                }
+            }
+        });
 
 
         switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
