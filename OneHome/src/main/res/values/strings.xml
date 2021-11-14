@@ -58,5 +58,7 @@
     <string name="curtain_header">Controls</string>
     <string name="imageofcurtain">Image of Curtain</string>
     <string name="ReviewSubmitButton">Submit</string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
 
 </resources>

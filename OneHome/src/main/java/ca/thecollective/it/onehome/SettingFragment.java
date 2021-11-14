@@ -4,30 +4,98 @@
 * Pratheep Chandrakumar N01376948 Section A*/
 package ca.thecollective.it.onehome;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.switchmaterial.SwitchMaterial;
+
+import java.util.Calendar;
+
 public class SettingFragment extends Fragment {
+
+    ToggleButton toggle;
+    SwitchMaterial darkswitch;
+    Button reset;
+    Button apply;
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_setting,container,false);
+        View view = inflater.inflate(R.layout.fragment_setting,container,false);
+
+        toggle = (ToggleButton) view.findViewById(R.id.toggleButton);
+        darkswitch = (SwitchMaterial) view.findViewById(R.id.DarkModeSwitch);
+        reset = (Button) view.findViewById(R.id.ResetButton);
+        apply = (Button) view.findViewById(R.id.ApplySettingsButton);
+
+        //dark mode switch
+        darkswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    // If the switch button is on
+                    // Show the switch button checked status as toast message
+                    Toast.makeText(getActivity(), "Dark mode enabled", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    // If the switch button is off
+                    // Show the switch button checked status as toast message
+                    Toast.makeText(getActivity(), "Dark mode disabled", Toast.LENGTH_SHORT).show();
+
+                }
+            }
+        });
+
+        //togglebutton
+        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
+                    Toast.makeText(getActivity(),"Screen is Locked", Toast.LENGTH_SHORT).show();
+                } else {
+                    getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+                    Toast.makeText(getActivity(),"Screen is Unlocked", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
+        //reset button
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    Intent intent = getActivity().getIntent();
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    getActivity().overridePendingTransition(0, 0);
+                    getActivity().finish();
+                    Toast.makeText(getActivity(),"App Reset", Toast.LENGTH_SHORT).show();
+                    getActivity().overridePendingTransition(0, 0);
+                    startActivity(intent);
+            }
+        });
+
+
+        return view;
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
 
-
-    }
 }

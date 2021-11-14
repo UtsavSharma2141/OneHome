@@ -59,4 +59,6 @@
     <string name="curtain_header">Commandes de rideaux</string>
     <string name="imageofcurtain">Image de rideau</string>
     <string name="ReviewSubmitButton">Soumettre</string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
 </resources>

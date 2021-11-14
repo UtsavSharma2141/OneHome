@@ -89,7 +89,10 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="159dp"
         android:layout_marginBottom="340dp"
-        android:text="@string/LockScreenButton" />
+        android:text="@string/LockScreenButton"
+        android:checked="false"
+        android:textOff="@string/off"
+        android:textOn="@string/on" />
 
     <TextView
         android:id="@+id/textView"
