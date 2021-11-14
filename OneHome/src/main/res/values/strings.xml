@@ -13,10 +13,8 @@
     <string name="OpenButton">Open</string>
     <string name="CloseButton">Close</string>
     <string name="CurtainControl">Control opening and closing of Curtain by sliding.</string>
-    <string name="SignOutButton">Yes</string>
-    <string name="EnglishRadio">English</string>
-    <string name="FrenchRadio">French</string>
-    <string name="SignOutText">Sign Out?</string>
+    <string name="ApplyButton">Apply</string>
+    <string name="ApplySettingsButton">Apply Settings?</string>
     <string name="ChangeLanguageText">Change Language</string>
     <string name="DarkModeText">Dark Mode</string>
     <string name="ResetAppButton">Reset App</string>

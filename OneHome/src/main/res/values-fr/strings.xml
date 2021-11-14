@@ -13,10 +13,8 @@
     <string name="navigation_drawer_close" >Fermer le tiroir de navigation</string>
     <string name="OpenButton">Ouvert</string>
     <string name="CloseButton">proche</string>
-    <string name="SignOutButton">Oui</string>
-    <string name="EnglishRadio">English</string>
-    <string name="FrenchRadio">French</string>
-    <string name="SignOutText">" Se déconnecter?"</string>
+    <string name="ApplyButton">Appliquer</string>
+    <string name="ApplySettingsButton">"Appliquer les paramètres?"</string>
     <string name="ChangeLanguageText">Changer de Langue</string>
     <string name="DarkModeText">Mode Sombre</string>
     <string name="CurtainControl">Commande d\'ouverture et de fermeture de Rideau par coulissement.</string>

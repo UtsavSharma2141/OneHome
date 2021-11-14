@@ -21,11 +21,10 @@
         android:text="@string/SettingsTitleText"
         android:fontFamily="@font/tommy_soft"
         android:textSize="30sp">
-
     </TextView>
 
     <Button
-        android:id="@+id/SignOutButton"
+        android:id="@+id/ApplySettingsButton"
         android:layout_width="170sp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -36,13 +35,13 @@
         android:layout_marginBottom="110dp"
         android:backgroundTintMode="@color/white"
         android:fontFamily="@font/tommy_soft"
-        android:text="@string/SignOutButton"
+        android:text="@string/ApplyButton"
         android:textColor="@color/amber" />
 
 
 
     <TextView
-        android:id="@+id/SignOut"
+        android:id="@+id/ApplySettings"
         android:layout_width="210sp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -51,7 +50,7 @@
         android:layout_marginBottom="170dp"
         android:fontFamily="@font/tommy_soft"
         android:gravity="center"
-        android:text="@string/SignOutText"
+        android:text="@string/ApplySettingsButton"
         android:textColor="@color/amber"
         android:textSize="35sp" />
 
