@@ -60,4 +60,5 @@
     <string name="app_link">Le lien de l application est disponible lorsque nous publions l application sur le Playstore.</string>
     <string name="curtain_header">Commandes de rideaux</string>
     <string name="imageofcurtain">Image de rideau</string>
+    <string name="ReviewSubmitButton">Soumettre</string>
 </resources>
