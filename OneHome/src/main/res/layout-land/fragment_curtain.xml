@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/lightblue"
+    android:background="@drawable/curtainbackground"
     >
 
 
@@ -12,26 +12,26 @@
         android:layout_width="match_parent"
         android:layout_height="68dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="7dp"
+        android:layout_marginBottom="1dp"
         android:max="150"
         android:padding="10dp"
         android:paddingTop="10dp" />
 
-
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_width="166dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="225dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="-49dp"
-        android:layout_marginBottom="361dp"
-        android:text="Curtain Fragment"
-        android:textColor="@color/purple_700"
-        android:textSize="30dp"></TextView>
+        android:layout_marginStart="330dp"
+        android:layout_marginTop="134dp"
+        android:layout_marginEnd="235dp"
+        android:layout_marginBottom="219dp"
+        android:gravity="center"
+        android:text="@string/curtain_header"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/OpenButton"
@@ -39,9 +39,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="532dp"
+        android:layout_marginEnd="502dp"
         android:layout_marginBottom="145dp"
         android:text="@string/OpenButton" />
+
 
     <Button
         android:id="@+id/CloseButton"
@@ -49,19 +50,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="117dp"
-        android:layout_marginBottom="147dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="145dp"
         android:text="@string/CloseButton" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="257dp"
-        android:layout_height="224dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="248dp"
-        android:layout_marginBottom="142dp"
-        app:srcCompat="@drawable/curtain" />
 
     <TextView
         android:id="@+id/CurtainOpeningSelection"
@@ -69,10 +60,11 @@
         android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="189dp"
-        android:layout_marginBottom="88dp"
+        android:layout_marginEnd="147dp"
+        android:layout_marginBottom="92dp"
+        android:gravity="center"
         android:text="@string/CurtainControl"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20dp" />
 
 
