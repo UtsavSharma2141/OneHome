@@ -15,14 +15,16 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class ReviewUs extends AppCompatActivity {
 
     RatingBar ratingBar;
     Button btnsubmit;
-    EditText name;
-    EditText phone;
-    EditText email;
-    EditText comment;
+    EditText name,phone,email,comment;
+    DatabaseReference reference;
+    Member member;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,16 +41,21 @@ public class ReviewUs extends AppCompatActivity {
         phone = findViewById(R.id.Phone);
         email = findViewById(R.id.EmailAddress);
         comment = findViewById(R.id.comment);
+        reference = FirebaseDatabase.getInstance().getReference().child("Member");
+        member = new Member();
 
         //submit button
         btnsubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String n = name.getText().toString();
-                String p = phone.getText().toString();
-                String e = email.getText().toString();
-                String c = comment.getText().toString();
+
+                String n = name.getText().toString().trim();
+                Long p = Long.parseLong(phone.getText().toString().trim());
+                String e = email.getText().toString().trim();
+                String c = comment.getText().toString().trim();
                 String s = String.valueOf(ratingBar.getRating());
+
+
 
                 //if one or more fields are empty
                 if(name.getText().toString().isEmpty() || phone.getText().toString().isEmpty() || email.getText().toString().isEmpty() || comment.getText().toString().isEmpty()){
@@ -56,8 +63,14 @@ public class ReviewUs extends AppCompatActivity {
                 }
 
                 else{
-                    Toast.makeText(ReviewUs.this, "Thank you for the review", Toast.LENGTH_SHORT).show();
-                    onBackPressed();
+                    member.setName(name.getText().toString().trim());
+                    member.setComment(c);
+                    member.setEmail(e);
+                    member.setNumber(p);
+                    member.setRating(s);
+                    reference.push().setValue(member);
+                    Toast.makeText(ReviewUs.this,"Data Entered Sussessfully.",Toast.LENGTH_SHORT).show();
+                    //onBackPressed();
                 }
             }
         });
