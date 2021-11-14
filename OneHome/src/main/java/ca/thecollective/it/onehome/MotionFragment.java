@@ -20,12 +20,40 @@ import androidx.fragment.app.Fragment;
 
 public class MotionFragment extends Fragment {
 
+    Button SetTimeButton;
+    Button ResetTimeButton;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_motion,container,false);
+            View view = inflater.inflate(R.layout.fragment_motion, container, false);
 
+            Button SetTimeButton = (Button) view.findViewById(R.id.SetTimeButton);
+            SetTimeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(getActivity(), "Setting new time", Toast.LENGTH_SHORT).show();
+
+                }
+            });
+            Button ResetTimeButton = (Button) view.findViewById(R.id.ResetTimeButton);
+            ResetTimeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(getActivity(),"Resetting the time", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            Button EmergencyButton = (Button) view.findViewById(R.id.EmergencyButton);
+            EmergencyButton.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view)
+                {
+                    Toast.makeText(getActivity(),"Calling emergency help!", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            return view;
 
     }
 }
