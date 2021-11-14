@@ -26,15 +26,16 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class DisplayFragment extends Fragment {
 
-    Switch switch1;
-    Switch switch2;
-    Switch switch3;
-    Switch switch4;
+    SwitchMaterial switch1;
+    SwitchMaterial switch2;
+    SwitchMaterial switch3;
+    SwitchMaterial switch4;
     Button EnterButton;
-    CheckBox checkBox1;
+    CheckBox checkbox;
     View.OnClickListener mOnClickListener;
     EditText Text;
     String TextValue;
@@ -42,24 +43,26 @@ public class DisplayFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        checkBox1 = (CheckBox)getView().findViewById(R.id.option1);
-        switch1 = (Switch)getView().findViewById(R.id.option2);
-        switch2 = (Switch)getView().findViewById(R.id.option3);
-        switch3 = (Switch)getView().findViewById(R.id.option4);
-        switch4 = (Switch)getView().findViewById(R.id.option5);
-        EnterButton = (Button)getView().findViewById(R.id.EnterButton);
+        View view = inflater.inflate(R.layout.fragment_display,container,false);
+
+        checkbox = (CheckBox)view.findViewById(R.id.checkoption);
+        switch1 = (SwitchMaterial) view.findViewById(R.id.option2);
+        switch2 = (SwitchMaterial) view.findViewById(R.id.option3);
+        switch3 = (SwitchMaterial) view.findViewById(R.id.option4);
+        switch4 = (SwitchMaterial) view.findViewById(R.id.option5);
+        EnterButton = (Button)view.findViewById(R.id.EnterButton);
 
 
         //onclick for undo snackbar button
         mOnClickListener= new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkBox1.setChecked(false);
+                checkbox.setChecked(false);
             }
         };
 
         //checkbox code
-        checkBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
@@ -76,11 +79,14 @@ public class DisplayFragment extends Fragment {
                             snackbar.show();
                 }else{
                     //disable switches
+
                     switch1.setEnabled(false);
                     switch2.setEnabled(false);
                     switch3.setEnabled(false);
                     switch4.setEnabled(false);
+
                 }
+
             }
         });
 
@@ -158,20 +164,14 @@ public class DisplayFragment extends Fragment {
         //enterbutton code
         EnterButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                TextValue = Text.getText().toString();
-                if(Text.getText().toString().isEmpty()){
-                    //if textbox is empty
-                    Toast.makeText(getActivity(),"Text Box is Empty",Toast.LENGTH_LONG).show();
-                }
-                else{
+            public void onClick(View view) {
                     //if textbox is not empty
-                    Toast.makeText(getActivity(),"Text: "+ TextValue +"\n is sent to display",Toast.LENGTH_LONG).show();
-                }
+                    Toast.makeText(getActivity(),"Text: \n is sent to display",Toast.LENGTH_LONG).show();
+
             }
         });
 
-        return inflater.inflate(R.layout.fragment_display,container,false);
+        return view;
 
     }
 }
