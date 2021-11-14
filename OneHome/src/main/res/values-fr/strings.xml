@@ -24,8 +24,8 @@
     <string name="SettingsTitleText">" Paramètres"</string>
     <string name="LCDTitle">Paramètres d\'affichage à cristaux liquides</string>
     <string name="LcdOption1">" Allumer l'écran LCD"</string>
-    <string name="LcdOption2">Mouvement d\'affichage</string>
-    <string name="LcdOption3">Affichage de la température</string>
+    <string name="LcdOption3">Mouvement d\'affichage</string>
+    <string name="LcdOption2">Affichage de la température</string>
     <string name="LcdOption4">" Afficher l'état du rideau"</string>
     <string name="LcdOption5">" Afficher le texte personnalisé"</string>
     <string name="InputLcd">" Saisir le texte à afficher (12 caractères maximum)"</string>
