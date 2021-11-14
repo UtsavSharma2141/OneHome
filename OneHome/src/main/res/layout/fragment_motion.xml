@@ -44,18 +44,18 @@
         android:id="@+id/ToggleSwitch"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:textStyle="bold"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="111dp"
-        android:layout_marginTop="357dp"
-        android:layout_marginEnd="110dp"
-        android:layout_marginBottom="314dp"
-        android:text="Toggle Switch ON/OFF" />
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="402dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="268dp"
+        android:text="Toggle Switch ON/OFF"
+        android:textStyle="bold" />
 
-    <EditText
+    <TextView
         android:id="@+id/editTextTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -68,10 +68,12 @@
         android:layout_marginEnd="101dp"
         android:layout_marginBottom="409dp"
         android:ems="10"
+        android:gravity="center"
         android:text="Current Time"
         android:textStyle="bold"
         android:textAlignment="center"
         android:inputType="time" />
+
 
     <TextView
         android:id="@+id/textView3"
@@ -85,7 +87,8 @@
         android:layout_marginTop="85dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="593dp"
-        android:text="Motion Sensor Fragment"
+        android:text="Motion Alarm Control"
+        android:gravity="center"
         android:textAlignment="center"
         android:textSize="25dp"
         android:textStyle="bold" />
@@ -119,5 +122,7 @@
         android:layout_marginEnd="153dp"
         android:layout_marginBottom="480dp"
         app:srcCompat="@drawable/alarm_icon" />
+
+
 
 </RelativeLayout>
