@@ -22,7 +22,7 @@
         android:layout_marginEnd="84dp"
         android:numStars="5"
         android:stepSize="0.5"
-        tools:ignore="SpeakableTextPresentCheck"></RatingBar>
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/Name"
@@ -83,6 +83,6 @@
         android:layout_marginStart="122dp"
         android:layout_marginEnd="110dp"
         android:layout_marginBottom="13dp"
-        android:text="@string/ReviewSubmitButton"></Button>
+        android:text="@string/ReviewSubmitButton" />
 
 </RelativeLayout>
