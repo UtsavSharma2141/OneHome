@@ -54,7 +54,6 @@ public class TemperatureFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         temperature = view.findViewById(R.id.live_temp);
-        temperature.setText("Hello");
         humidity = view.findViewById(R.id.live_humidity);
 
 

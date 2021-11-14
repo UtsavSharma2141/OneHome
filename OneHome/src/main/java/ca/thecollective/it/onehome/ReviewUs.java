@@ -3,9 +3,11 @@ package ca.thecollective.it.onehome;
 /* Dhruv Dave N01401657 Section A
 /* Sukhvir Brar N01395820 Section A
 * Pratheep Chandrakumar N01376948 Section A*/
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
@@ -22,6 +24,10 @@ public class ReviewUs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_us);
 
+//        ActionBar actionBar = getSupportActionBar();
+//        actionBar.setHomeButtonEnabled(true);
+//        actionBar.setDisplayHomeAsUpEnabled(true);
+
         ratingBar = findViewById(R.id.rating_bar);
         btnsubmit = findViewById(R.id.submit_review);
 
@@ -32,5 +38,11 @@ public class ReviewUs extends AppCompatActivity {
                 Toast.makeText(ReviewUs.this, s+"star", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        onBackPressed();
+        return true;
     }
 }

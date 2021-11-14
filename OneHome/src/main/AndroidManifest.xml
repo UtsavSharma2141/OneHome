@@ -21,11 +21,15 @@
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:configChanges="orientation|screenSize"
-            android:theme="@style/Theme.OneHome.NoActionbar"></activity>
+            android:theme="@style/Theme.OneHome.NoActionbar"
+            android:parentActivityName="ca.thecollective.it.onehome.ReviewUs"
+            ></activity>
+
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme1.OneHome">
+            android:theme="@style/Theme1.OneHome"
+           >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
