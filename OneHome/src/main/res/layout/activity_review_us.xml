@@ -32,7 +32,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="66dp"
         android:layout_marginBottom="312dp"
-        android:hint="Enter your Name" />
+        android:hint="@string/NameString" />
 
     <EditText
         android:id="@+id/Phone"
@@ -43,7 +43,7 @@
         android:layout_marginTop="446dp"
         android:layout_marginEnd="59dp"
         android:ems="10"
-        android:hint="Enter your Phone Number"
+        android:hint="@string/PhoneNum"
         android:inputType="phone" />
 
     <EditText
@@ -57,7 +57,7 @@
         android:layout_marginEnd="43dp"
         android:layout_marginBottom="139dp"
         android:ems="10"
-        android:hint="Enter your email address"
+        android:hint="@string/EmailString"
         android:inputType="textEmailAddress" />
 
     <EditText
@@ -70,7 +70,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="605dp"
         android:layout_marginEnd="48dp"
-        android:hint="enter a short comment (Max 30 char)"
+        android:hint="@string/CommentString"
         android:maxLength="30" />
 
     <Button

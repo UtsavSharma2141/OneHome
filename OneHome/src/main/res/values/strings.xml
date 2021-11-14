@@ -60,5 +60,9 @@
     <string name="ReviewSubmitButton">Submit</string>
     <string name="on">ON</string>
     <string name="off">OFF</string>
+    <string name="CommentString">enter a short comment (Max 30 char)</string>
+    <string name="EmailString">Enter your email address</string>
+    <string name="PhoneNum">Enter your Phone Number</string>
+    <string name="NameString">Enter your Name</string>
 
 </resources>
