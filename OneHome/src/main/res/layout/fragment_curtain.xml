@@ -6,12 +6,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@drawable/curtainbackground">
 
 
     <TextView
-        android:gravity="center"
         android:layout_width="152dp"
         android:layout_height="62dp"
         android:layout_alignParentStart="true"
@@ -22,6 +22,7 @@
         android:layout_marginTop="150dp"
         android:layout_marginEnd="107dp"
         android:layout_marginBottom="519dp"
+        android:gravity="center"
         android:text="@string/curtain_header"
         android:textColor="@color/white"
         android:textSize="30sp"
@@ -30,13 +31,17 @@
 
     <Button
         android:id="@+id/OpenButton"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="117dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="246dp"
         android:layout_marginBottom="228dp"
-        android:text="@string/OpenButton"></Button>
+        android:stateListAnimator="@android:anim/accelerate_interpolator"
+        android:text="@string/OpenButton"
+        android:visibility="visible"
+        tools:visibility="visible"></Button>
 
     <Button
         android:id="@+id/CloseButton"
@@ -49,7 +54,6 @@
         android:text="@string/CloseButton" />
 
     <TextView
-        android:gravity="center"
         android:id="@+id/CurtainOpeningSelection"
         android:layout_width="380dp"
         android:layout_height="50dp"
@@ -57,6 +61,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="26dp"
         android:layout_marginBottom="149dp"
+        android:gravity="center"
         android:text="@string/CurtainControl"
         android:textColor="@color/white"
         android:textSize="20sp" />
