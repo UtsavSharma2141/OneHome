@@ -115,6 +115,8 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
             }
         });
 
+        //This part should be commented.
+
 //        if(savedInstanceState == null) {
 //            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TemperatureFragment()).commit();
 //            navigationView.setCheckedItem(R.id.nav_temperature);
