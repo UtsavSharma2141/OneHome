@@ -9,7 +9,7 @@
     android:background="@color/amber">
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/ResetTimeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -25,7 +25,7 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/EmergencyButton"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -41,7 +41,7 @@
         android:textStyle="bold" />
 
     <Switch
-        android:id="@+id/switch7"
+        android:id="@+id/ToggleSwitch"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:textStyle="bold"
@@ -91,7 +91,7 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/SetTimeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"

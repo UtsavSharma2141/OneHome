@@ -57,7 +57,8 @@ import static android.Manifest.permission.INTERNET;
 import static android.Manifest.permission.RECORD_AUDIO;
 import static android.Manifest.permission.SEND_SMS;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class
+MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     public static int REQUEST_PERMISSION=1;
     private final String CHANNEL_ID = "Notification";
     private final int NOTIFICATION_ID =001;
