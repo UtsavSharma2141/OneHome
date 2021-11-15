@@ -32,10 +32,10 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="114dp"
-        android:layout_marginTop="630dp"
-        android:layout_marginEnd="107dp"
-        android:layout_marginBottom="53dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="560dp"
+        android:layout_marginEnd="109dp"
+        android:layout_marginBottom="123dp"
         android:text="Emergency Call"
         android:textAlignment="center"
         android:textStyle="bold" />
@@ -55,24 +55,7 @@
         android:text="Toggle Switch ON/OFF"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/editTextTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="276dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginBottom="409dp"
-        android:ems="10"
-        android:gravity="center"
-        android:text="Current Time"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:inputType="time" />
+
 
 
     <TextView
@@ -117,12 +100,11 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="157dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="153dp"
-        android:layout_marginBottom="480dp"
+        android:layout_marginStart="159dp"
+        android:layout_marginTop="238dp"
+        android:layout_marginEnd="151dp"
+        android:layout_marginBottom="392dp"
         app:srcCompat="@drawable/alarm_icon" />
-
 
 
 </RelativeLayout>

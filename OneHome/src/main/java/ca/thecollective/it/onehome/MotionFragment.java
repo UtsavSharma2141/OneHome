@@ -5,8 +5,10 @@
 package ca.thecollective.it.onehome;
 
 import android.content.Context;
+import android.content.Intent;
 import android.icu.text.SimpleDateFormat;
 import android.icu.text.UnicodeSetSpanner;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +30,7 @@ public class MotionFragment extends Fragment {
     Button SetTimeButton;
     Button ResetTimeButton;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -47,15 +50,6 @@ public class MotionFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(getActivity(),"Resetting the time", Toast.LENGTH_SHORT).show();
-                }
-            });
-
-            Button EmergencyButton = (Button) view.findViewById(R.id.EmergencyButton);
-            EmergencyButton.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View view)
-                {
-                    Toast.makeText(getActivity(),"Calling emergency help!", Toast.LENGTH_SHORT).show();
                 }
             });
 
