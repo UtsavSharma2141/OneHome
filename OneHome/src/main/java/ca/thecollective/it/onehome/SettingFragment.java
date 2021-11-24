@@ -23,6 +23,7 @@ import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.switchmaterial.SwitchMaterial;
@@ -55,11 +56,13 @@ public class SettingFragment extends Fragment {
                     // If the switch button is on
                     // Show the switch button checked status as toast message
                     Toast.makeText(getActivity(), "Dark mode enabled", Toast.LENGTH_SHORT).show();
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 
                 } else {
                     // If the switch button is off
                     // Show the switch button checked status as toast message
                     Toast.makeText(getActivity(), "Dark mode disabled", Toast.LENGTH_SHORT).show();
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
                 }
             }

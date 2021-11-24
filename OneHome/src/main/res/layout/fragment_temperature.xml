@@ -9,8 +9,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
     android:background="@color/white"
+    android:padding="10dp"
     android:orientation="vertical"
     android:layout_marginTop="50dp"
 
@@ -141,6 +141,7 @@
                 android:text="@string/set_temperature_threshhold"
                 android:textSize="20sp"
                 android:textColor="@color/black"
+
                 >
 
             </TextView>
@@ -158,8 +159,8 @@
             android:paddingTop="10dp"
             android:text="@string/alert_me"
             android:textAlignment="center"
+            android:textColor="@color/black"
             android:textSize="20sp"
-
             tools:ignore="UseSwitchCompatOrMaterialXml,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck">
 
         </Switch>
@@ -188,7 +189,7 @@
                 android:layout_height="match_parent"
                 android:text="@string/set_humidity_threshhold"
                 android:textSize="20sp"
-                android:textColor="@color/black"
+               android:textColor="@color/black"
                 >
 
             </TextView>
@@ -205,6 +206,7 @@
             android:layout_marginRight="250dp"
             android:paddingTop="10dp"
             android:text="@string/alert_me"
+            android:textColor="@color/black"
             android:textAlignment="center"
             android:textSize="20sp"
 
