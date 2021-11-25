@@ -31,9 +31,9 @@ public class ReviewUs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_us);
 
-       //ActionBar actionBar = getSupportActionBar();
-       //actionBar.setHomeButtonEnabled(true);
-       //actionBar.setDisplayHomeAsUpEnabled(true);
+       ActionBar actionBar = getSupportActionBar();
+       actionBar.setHomeButtonEnabled(true);
+       actionBar.setDisplayHomeAsUpEnabled(true);
 
         ratingBar = findViewById(R.id.rating_bar);
         btnsubmit = findViewById(R.id.submit_review_button);

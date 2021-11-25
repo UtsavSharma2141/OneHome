@@ -16,14 +16,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OneHome">
-        <activity android:name=".ReviewUs" ></activity>
+        <activity android:name=".ReviewUs"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.OneHome">
+        </activity>
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:configChanges="orientation|screenSize"
             android:theme="@style/Theme.OneHome.NoActionbar"
-            android:parentActivityName="ca.thecollective.it.onehome.ReviewUs"
-            ></activity>
+            android:parentActivityName="ca.thecollective.it.onehome.ReviewUs">
+
+        </activity>
 
         <activity
             android:name=".SplashActivity"
