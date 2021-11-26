@@ -15,6 +15,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -30,6 +31,14 @@ public class ReviewUs extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_us);
+
+        FloatingActionButton floatingActionButton = findViewById(R.id.fab_btn);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ReviewUs.this, "This will take to the Google play store to rate and write review of this app", Toast.LENGTH_SHORT).show();
+            }
+        });
 
        ActionBar actionBar = getSupportActionBar();
        actionBar.setHomeButtonEnabled(true);
