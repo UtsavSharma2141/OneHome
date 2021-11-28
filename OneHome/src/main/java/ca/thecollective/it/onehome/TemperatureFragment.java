@@ -11,7 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,7 +32,8 @@ import java.util.ArrayList;
 
 public class TemperatureFragment extends Fragment {
 
-    private TextView temperature,humidity;
+    TextView temperature,humidity,max_temp,max_humidity;
+    SeekBar temp_seekbar, humidity_seekbar;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference mrootReference = firebaseDatabase.getReference();
     private DatabaseReference mchildReference = mrootReference.child("message");
@@ -46,17 +49,42 @@ public class TemperatureFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_temperature,container,false);
 
+
     }
 
     @SuppressLint("SetTextI18n")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         temperature = view.findViewById(R.id.live_temp);
         humidity = view.findViewById(R.id.live_humidity);
+        max_temp= (TextView) view.findViewById(R.id.max_temp);
+        max_humidity= (TextView) view.findViewById(R.id.max_humidity);
+        temp_seekbar = (SeekBar) view.findViewById(R.id.temp_seekbar);
+        humidity_seekbar= (SeekBar) view.findViewById(R.id.humidity_seekbar);
 
+        max_temp.setText("Set Maximum Temperature: "+ temp_seekbar.getProgress() + "/"+temp_seekbar.getMax());
+        temp_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
+            int progress_value;
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                progress_value = progress;
+                max_temp.setText("Set Maximum Temperature: "+ progress + "/"+temp_seekbar.getMax());
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                max_temp.setText("Set Maximum Temperature: "+ progress_value + "/"+temp_seekbar.getMax());
+
+            }
+        });
 
     }
 
@@ -93,6 +121,10 @@ public class TemperatureFragment extends Fragment {
 
             }
         });
+
+    }
+
+    public void seekbar(){
 
     }
 
