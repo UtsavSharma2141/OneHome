@@ -86,6 +86,29 @@ public class TemperatureFragment extends Fragment {
             }
         });
 
+        max_humidity.setText("Set Maximum Humidity: "+ humidity_seekbar.getProgress() + "/"+humidity_seekbar.getMax());
+        humidity_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+            int progress_value2;
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                progress_value2 = progress;
+                max_humidity.setText("Set Maximum Humidity: "+ progress + "/"+humidity_seekbar.getMax());
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                max_humidity.setText("Set Maximum Humidity: "+ progress_value2 + "/"+humidity_seekbar.getMax());
+
+            }
+        });
+
     }
 
     @Override
@@ -123,9 +146,4 @@ public class TemperatureFragment extends Fragment {
         });
 
     }
-
-    public void seekbar(){
-
-    }
-
 }

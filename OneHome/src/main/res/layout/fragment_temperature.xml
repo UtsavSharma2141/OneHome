@@ -175,7 +175,7 @@
             android:padding="10dp"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:max="40"/><!-- set 150 maximum value for the progress -->
+            android:max="40"/>
 
 
 
@@ -224,7 +224,7 @@
             android:paddingTop="10dp"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:max="150"/><!-- set 150 maximum value for the progress -->
+            android:max="50"/>
 
     </LinearLayout>
 
