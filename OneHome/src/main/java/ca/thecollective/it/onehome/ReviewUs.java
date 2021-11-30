@@ -5,8 +5,10 @@ package ca.thecollective.it.onehome;
 * Pratheep Chandrakumar N01376948 Section A*/
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +23,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ReviewUs extends AppCompatActivity {
 
+
+    CardView cardView;
     RatingBar ratingBar;
     Button btnsubmit;
     EditText name,phone,email,comment;
@@ -50,8 +54,10 @@ public class ReviewUs extends AppCompatActivity {
         phone = findViewById(R.id.Phone);
         email = findViewById(R.id.EmailAddress);
         comment = findViewById(R.id.comment);
+        cardView= findViewById(R.id.cardView);
         reference = FirebaseDatabase.getInstance().getReference().child("Member");
         member = new Member();
+        final LoadingBar loadingBar = new LoadingBar(ReviewUs.this);
 
         //submit button
         btnsubmit.setOnClickListener(new View.OnClickListener() {
@@ -72,13 +78,23 @@ public class ReviewUs extends AppCompatActivity {
                 }
 
                 else{
+                    cardView.setVisibility(View.VISIBLE);
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            btnsubmit.setEnabled(true);
+                            cardView.setVisibility(View.GONE);
+                            Toast.makeText(ReviewUs.this,"Data Entered Sussessfully.",Toast.LENGTH_SHORT).show();
+                        }
+                    }, 3000);
                     member.setName(name.getText().toString().trim());
                     member.setComment(c);
                     member.setEmail(e);
                     member.setNumber(p);
                     member.setRating(s);
                     reference.push().setValue(member);
-                    Toast.makeText(ReviewUs.this,"Data Entered Sussessfully.",Toast.LENGTH_SHORT).show();
+
                     //onBackPressed();
                 }
             }
