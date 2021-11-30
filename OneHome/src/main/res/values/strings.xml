@@ -64,5 +64,6 @@
     <string name="EmailString">Enter your email address</string>
     <string name="PhoneNum">Enter your Phone Number</string>
     <string name="NameString">Enter your Name</string>
+    <string name="TODO">TODO</string>
 
 </resources>
