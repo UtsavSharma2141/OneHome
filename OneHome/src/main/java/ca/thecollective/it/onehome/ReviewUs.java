@@ -84,12 +84,4 @@ public class ReviewUs extends AppCompatActivity {
             }
         });
     }
-
-    /**
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        onBackPressed();
-        return true;
-    }
-    **/
 }

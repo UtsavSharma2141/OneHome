@@ -111,6 +111,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:id="@+id/max_temp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/set_temperature_threshhold"
@@ -136,10 +137,10 @@
 
 
             <SeekBar
-                android:id="@+id/simpleSeekBar"
+                android:id="@+id/temp_seekbar"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:max="150"
+                android:max="40"
                 android:padding="10dp"
                 android:paddingTop="10dp" /><!-- set 150 maximum value for the progress -->
 
@@ -150,6 +151,7 @@
                 android:padding="1dp">
 
                 <TextView
+                    android:id="@+id/max_humidity"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="@string/set_humidity_threshhold"
@@ -176,10 +178,10 @@
             </Switch>
 
             <SeekBar
-                android:id="@+id/simpleSeekBar2"
+                android:id="@+id/humidity_seekbar"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:max="150"
+                android:max="50"
                 android:paddingTop="10dp" /><!-- set 150 maximum value for the progress -->
 
         </LinearLayout>
