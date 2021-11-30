@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+
+    android:background="@color/bac_2"
+    tools:context=".ReviewUs">
+
+
+    <RatingBar
+        android:id="@+id/rating_bar"
+        android:layout_width="240dp"
+        android:layout_height="68dp"
+        android:layout_above="@+id/Name"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="421dp"
+        android:layout_marginBottom="-72dp"
+        android:numStars="5"
+        android:stepSize="0.5"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/Name"
+        android:layout_width="283dp"
+        android:layout_height="59dp"
+        android:layout_above="@+id/Phone"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="83dp"
+        android:layout_marginBottom="17dp"
+        android:hint="@string/NameString" />
+
+    <EditText
+        android:id="@+id/Phone"
+        android:layout_width="294dp"
+        android:layout_height="59dp"
+        android:layout_above="@+id/EmailAddress"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="59dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="22dp"
+        android:ems="10"
+        android:hint="@string/PhoneNum"
+        android:inputType="phone"
+        android:maxLength="10"/>
+
+    <EditText
+        android:id="@+id/EmailAddress"
+        android:layout_width="318dp"
+        android:layout_height="67dp"
+        android:layout_above="@+id/comment"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="49dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="19dp"
+        android:ems="10"
+        android:hint="@string/EmailString"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/comment"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:layout_above="@+id/submit_review_button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="53dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="10dp"
+        android:hint="@string/CommentString"
+        android:maxLength="30" />
+
+    <Button
+        android:id="@+id/submit_review_button"
+        android:layout_width="281dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="215dp"
+        android:layout_marginEnd="234dp"
+        android:layout_marginBottom="14dp"
+        android:text="@string/ReviewSubmitButton" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="7dp"
+        android:cropToPadding="true"
+        android:foregroundGravity="bottom|right"
+        android:padding="100dp"
+        android:src="@drawable/ic_feedback_black_24dp__1_">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+</RelativeLayout>
+
