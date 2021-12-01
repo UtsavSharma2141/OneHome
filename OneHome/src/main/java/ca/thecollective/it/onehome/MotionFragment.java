@@ -4,8 +4,10 @@
 * Pratheep Chandrakumar N01376948 Section A*/
 package ca.thecollective.it.onehome;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.icu.text.SimpleDateFormat;
 import android.icu.text.UnicodeSetSpanner;
 import android.net.Uri;
@@ -19,13 +21,16 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.core.app.BundleCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+
+import com.google.firebase.database.connection.RequestResultCallback;
 
 import java.util.Calendar;
 
 public class MotionFragment extends Fragment {
-
 
     Button SetTimeButton;
     Button ResetTimeButton;
@@ -35,6 +40,8 @@ public class MotionFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_motion, container, false);
+
+
 
 
             Button SetTimeButton = (Button) view.findViewById(R.id.SetTimeButton);
@@ -56,4 +63,5 @@ public class MotionFragment extends Fragment {
             return view;
 
     }
-}
+
+    }
