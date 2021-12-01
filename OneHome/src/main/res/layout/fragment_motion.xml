@@ -123,5 +123,23 @@
         android:textColor="@color/black"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/position_text"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="159dp"
+        android:layout_marginEnd="135dp"
+        android:layout_marginBottom="534dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:text="Position" />
+
 
 </RelativeLayout>

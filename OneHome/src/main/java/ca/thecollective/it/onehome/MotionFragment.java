@@ -5,46 +5,74 @@
 package ca.thecollective.it.onehome;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
+import android.content.AsyncQueryHandler;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.icu.text.SimpleDateFormat;
 import android.icu.text.UnicodeSetSpanner;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import ca.thecollective.it.onehome.MainActivity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.BundleCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.common.internal.GetServiceRequest;
 import com.google.firebase.database.connection.RequestResultCallback;
 
 import java.util.Calendar;
 
-public class MotionFragment extends Fragment {
+
+public class  MotionFragment extends Fragment implements SensorEventListener {
 
     Button SetTimeButton;
     Button ResetTimeButton;
 
+    private TextView position_text;              //added all these private types
+    private Sensor proximitySensor;
+    private Boolean isProximityAvailable;
+    private SensorManager sensorManager;
+    private Vibrator vibrator;
 
+
+    @SuppressLint("ServiceCast")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_motion, container, false);
 
+         //this is where my code began
+            super.onCreate(savedInstanceState);
+            //setContentView(R.layout.fragment_motion);
+            getActivity().setContentView(R.layout.fragment_motion);
+
+        position_text = position_text.findViewById(R.id.position_text);
+           // sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        sensorManager= (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
+        vibrator = (Vibrator) getActivity().getSystemService((Context.VIBRATOR_SERVICE));
 
 
-
-            Button SetTimeButton = (Button) view.findViewById(R.id.SetTimeButton);
+            Button SetTimeButton = (Button) view .findViewById(R.id.SetTimeButton);
             SetTimeButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -60,8 +88,55 @@ public class MotionFragment extends Fragment {
                 }
             });
 
+            if (sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY)!=null)
+            {
+                proximitySensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+                isProximityAvailable = true;
+            } else {
+                position_text.setText("Proximity sensor is not available");
+                isProximityAvailable = false;
+            }
+
             return view;
 
     }
 
+
+
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        position_text.setText(event.values[0] + "cm");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            vibrator.vibrate(VibrationEffect.createOneShot(500,VibrationEffect.DEFAULT_AMPLITUDE));
+        } else
+        {
+            vibrator.vibrate(500);
+        }
     }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if(isProximityAvailable)
+        {
+            sensorManager.unregisterListener(this);
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(isProximityAvailable)
+        {
+            sensorManager.registerListener(this, proximitySensor,SensorManager.SENSOR_DELAY_NORMAL);
+        }
+
+
+    }
+}
