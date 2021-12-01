@@ -16,5 +16,12 @@ public class LoadingBar {
     void showDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         LayoutInflater inflater = activity.getLayoutInflater();
+        builder.setView(inflater.inflate(R.layout.progressbar,null));
+        dialog = builder.create();
+        dialog.show();
+    }
+
+    public void dismissbar() {
+        dialog.dismiss();
     }
 }

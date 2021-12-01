@@ -7,6 +7,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
@@ -24,12 +25,13 @@ import com.google.firebase.database.FirebaseDatabase;
 public class ReviewUs extends AppCompatActivity {
 
 
-    CardView cardView;
+//    CardView cardView;
     RatingBar ratingBar;
     Button btnsubmit;
     EditText name,phone,email,comment;
     DatabaseReference reference;
     Member member;
+    AlertDialog alertDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +56,10 @@ public class ReviewUs extends AppCompatActivity {
         phone = findViewById(R.id.Phone);
         email = findViewById(R.id.EmailAddress);
         comment = findViewById(R.id.comment);
-        cardView= findViewById(R.id.cardView);
+//        cardView= findViewById(R.id.cardView);
         reference = FirebaseDatabase.getInstance().getReference().child("Member");
         member = new Member();
-        final LoadingBar loadingBar = new LoadingBar(ReviewUs.this);
+         LoadingBar loadingBar = new LoadingBar(ReviewUs.this);
 
         //submit button
         btnsubmit.setOnClickListener(new View.OnClickListener() {
@@ -78,16 +80,26 @@ public class ReviewUs extends AppCompatActivity {
                 }
 
                 else{
-                    cardView.setVisibility(View.VISIBLE);
-                    Handler handler = new Handler();
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            btnsubmit.setEnabled(true);
-                            cardView.setVisibility(View.GONE);
-                            Toast.makeText(ReviewUs.this,"Data Entered Sussessfully.",Toast.LENGTH_SHORT).show();
-                        }
-                    }, 3000);
+//                    cardView.setVisibility(View.VISIBLE);
+//                    Handler handler = new Handler();
+//                    handler.postDelayed(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            btnsubmit.setEnabled(true);
+//                            cardView.setVisibility(View.GONE);
+//                            Toast.makeText(ReviewUs.this,"Data Entered Sussessfully.",Toast.LENGTH_SHORT).show();
+//                        }
+//                    }, 3000);
+                    loadingBar.showDialog();
+                     Handler handler = new Handler();
+                     handler.postDelayed(new Runnable() {
+                         @Override
+                         public void run() {
+                             loadingBar.dismissbar();
+                             Toast.makeText(ReviewUs.this,"Data Entered Sussessfully.",Toast.LENGTH_SHORT).show();
+
+                         }
+                     },3000);
                     member.setName(name.getText().toString().trim());
                     member.setComment(c);
                     member.setEmail(e);
