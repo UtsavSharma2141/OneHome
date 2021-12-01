@@ -10,6 +10,7 @@ import android.content.AsyncQueryHandler;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -43,16 +44,16 @@ import com.google.firebase.database.connection.RequestResultCallback;
 import java.util.Calendar;
 
 
-public class  MotionFragment extends Fragment implements SensorEventListener {
+public class  MotionFragment extends Fragment {
 
     Button SetTimeButton;
     Button ResetTimeButton;
 
-    private TextView position_text;              //added all these private types
+   /* private TextView position_text;              //added all these private types
     private Sensor proximitySensor;
     private Boolean isProximityAvailable;
     private SensorManager sensorManager;
-    private Vibrator vibrator;
+    private Vibrator vibrator;*/
 
 
     @SuppressLint("ServiceCast")
@@ -61,7 +62,32 @@ public class  MotionFragment extends Fragment implements SensorEventListener {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_motion, container, false);
 
-         //this is where my code began
+
+            SensorManager sensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
+            final Sensor proximitySensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+
+            SensorEventListener sensorEventListener = new SensorEventListener() {
+                @SuppressLint("ResourceAsColor")
+                @Override
+                public void onSensorChanged(SensorEvent event) {
+                    if(event.values[0]<proximitySensor.getMaximumRange()){
+                        getActivity().getWindow().getDecorView().setBackgroundColor(Color.DKGRAY);
+                    }
+                    else
+                    {
+                        getActivity().getWindow().getDecorView().setBackgroundColor(R.color.amber);
+                    }
+                }
+
+                @Override
+                public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+                }
+            };
+
+            sensorManager.registerListener(sensorEventListener,proximitySensor,2*1000*1000);
+
+     /*    //this is where my code began
             super.onCreate(savedInstanceState);
             //setContentView(R.layout.fragment_motion);
             getActivity().setContentView(R.layout.fragment_motion);
@@ -69,7 +95,7 @@ public class  MotionFragment extends Fragment implements SensorEventListener {
         position_text = position_text.findViewById(R.id.position_text);
            // sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensorManager= (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
-        vibrator = (Vibrator) getActivity().getSystemService((Context.VIBRATOR_SERVICE));
+        vibrator = (Vibrator) getActivity().getSystemService((Context.VIBRATOR_SERVICE));*/
 
 
             Button SetTimeButton = (Button) view .findViewById(R.id.SetTimeButton);
@@ -88,14 +114,14 @@ public class  MotionFragment extends Fragment implements SensorEventListener {
                 }
             });
 
-            if (sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY)!=null)
+           /* if (sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY)!=null)
             {
                 proximitySensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
                 isProximityAvailable = true;
             } else {
                 position_text.setText("Proximity sensor is not available");
                 isProximityAvailable = false;
-            }
+            }*/
 
             return view;
 
@@ -104,7 +130,7 @@ public class  MotionFragment extends Fragment implements SensorEventListener {
 
 
 
-    @Override
+   /* @Override
     public void onSensorChanged(SensorEvent event) {
         position_text.setText(event.values[0] + "cm");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -138,5 +164,5 @@ public class  MotionFragment extends Fragment implements SensorEventListener {
         }
 
 
-    }
+    }*/
 }
