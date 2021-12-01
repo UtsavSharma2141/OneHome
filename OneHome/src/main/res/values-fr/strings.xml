@@ -59,10 +59,11 @@
     <string name="curtain_header">Commandes de rideaux</string>
     <string name="imageofcurtain">Image de rideau</string>
     <string name="ReviewSubmitButton">Soumettre</string>
-    <string name="on">ON</string>
-    <string name="off">OFF</string>
-    <string name="CommentString">enter a short comment (Max 30 char)</string>
-    <string name="EmailString">Enter your email address</string>
-    <string name="PhoneNum">Enter your Phone Number</string>
-    <string name="NameString">Enter your Name</string>
+    <string name="on">AU</string>
+    <string name="off">DÉSACTIVÉ</string>
+    <string name="CommentString"> entrez un court commentaire (Max 30 car)</string>
+    <string name="EmailString"> Entrez votre adresse email</string>
+    <string name="PhoneNum">Entrez votre numéro de téléphone</string>
+    <string name="NameString">Entrez votre nom</string>
+    <string name="TODO"> À FAIRE</string>
 </resources>
