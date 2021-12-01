@@ -313,7 +313,7 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
         CreateNotificationChannel();
         NotificationCompat.Builder builder= new NotificationCompat.Builder(this,CHANNEL_ID)
                 .setSmallIcon(R.mipmap.ic_launcher_round)
-                .setContentTitle("You have allowed the Call Permission");
+                .setContentTitle(getString(R.string.allow_call_perm));
 
         Intent notificationIntent = new Intent(this, MainActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0,notificationIntent,PendingIntent.FLAG_UPDATE_CURRENT);

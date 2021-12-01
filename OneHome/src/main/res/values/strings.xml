@@ -65,5 +65,17 @@
     <string name="PhoneNum">Enter your Phone Number</string>
     <string name="NameString">Enter your Name</string>
     <string name="TODO">TODO</string>
+    <string name="dark_enable">Dark mode enabled</string>
+    <string name="dark_disable">Dark mode disabled</string>
+    <string name="screeen_locked">Screen is Locked</string>
+    <string name="screen_unlocked">Screen is Unlocked</string>
+    <string name="app_reset">App Reset</string>
+    <string name="field_empty">One or more fields are empty</string>
+    <string name="field_success">Data Entered Sussessfully.</string>
+    <string name="curtain_open">Curtain is opened</string>
+    <string name="curtain_close">Curtain is closed</string>
+    <string name="allow_call_perm">You have allowed the Call Permission</string>
+    <string name="set_max_humidity">Set Maximum Humidity: </string>
+    <string name="set_max_temperature">Set Maximum Temperature: </string>
 
 </resources>

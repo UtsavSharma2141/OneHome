@@ -55,13 +55,13 @@ public class SettingFragment extends Fragment {
                 if (isChecked) {
                     // If the switch button is on
                     // Show the switch button checked status as toast message
-                    Toast.makeText(getActivity(), "Dark mode enabled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), getResources().getString(R.string.dark_enable), Toast.LENGTH_SHORT).show();
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 
                 } else {
                     // If the switch button is off
                     // Show the switch button checked status as toast message
-                    Toast.makeText(getActivity(), "Dark mode disabled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), getResources().getString(R.string.dark_disable), Toast.LENGTH_SHORT).show();
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
                 }
@@ -73,10 +73,10 @@ public class SettingFragment extends Fragment {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
-                    Toast.makeText(getActivity(),"Screen is Locked", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), getResources().getString(R.string.screeen_locked), Toast.LENGTH_SHORT).show();
                 } else {
                     getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
-                    Toast.makeText(getActivity(),"Screen is Unlocked", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), getResources().getString(R.string.screen_unlocked), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -90,7 +90,7 @@ public class SettingFragment extends Fragment {
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     getActivity().overridePendingTransition(0, 0);
                     getActivity().finish();
-                    Toast.makeText(getActivity(),"App Reset", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), getResources().getString(R.string.app_reset), Toast.LENGTH_SHORT).show();
                     getActivity().overridePendingTransition(0, 0);
                     startActivity(intent);
             }

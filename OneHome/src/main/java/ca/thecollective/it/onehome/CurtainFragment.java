@@ -33,7 +33,7 @@ public class CurtainFragment extends Fragment {
         OpenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "Curtain is opened", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), getResources().getString(R.string.curtain_open), Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -41,7 +41,7 @@ public class CurtainFragment extends Fragment {
         CloseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(),"Curtain is closed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), getResources().getString(R.string.curtain_close), Toast.LENGTH_SHORT).show();
             }
         });
 

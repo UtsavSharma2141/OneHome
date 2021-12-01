@@ -76,7 +76,7 @@ public class ReviewUs extends AppCompatActivity {
 
                 //if one or more fields are empty
                 if(name.getText().toString().isEmpty() || phone.getText().toString().isEmpty() || email.getText().toString().isEmpty() || comment.getText().toString().isEmpty()){
-                    Toast.makeText(ReviewUs.this, "One or more fields are empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ReviewUs.this, getResources().getString(R.string.field_empty), Toast.LENGTH_SHORT).show();
                 }
 
                 else{
@@ -86,7 +86,7 @@ public class ReviewUs extends AppCompatActivity {
                          @Override
                          public void run() {
                              loadingBar.dismissbar();
-                             Toast.makeText(ReviewUs.this,"Data Entered Sussessfully.",Toast.LENGTH_SHORT).show();
+                             Toast.makeText(ReviewUs.this, getResources().getString(R.string.field_success),Toast.LENGTH_SHORT).show();
 
                          }
                      },3000);

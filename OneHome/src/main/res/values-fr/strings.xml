@@ -66,4 +66,16 @@
     <string name="PhoneNum">Entrez votre numéro de téléphone</string>
     <string name="NameString">Entrez votre nom</string>
     <string name="TODO"> À FAIRE</string>
+    <string name="dark_enable">Mode sombre activé</string>
+    <string name="dark_disable">Mode sombre désactivé</string>
+    <string name="screeen_locked">Lécran est verrouillé</string>
+    <string name="screen_unlocked">Lécran est déverrouillé</string>
+    <string name="app_reset">Réinitialisation de lapplication</string>
+    <string name="field_empty">Un ou plusieurs champs sont vides</string>
+    <string name="field_success">Données saisies avec succès.</string>
+    <string name="curtain_open">Le rideau est ouvert</string>
+    <string name="curtain_close">Le rideau est fermé</string>
+    <string name="allow_call_perm">Vous avez autorisé lautorisation dappel</string>
+    <string name="set_max_humidity">Définir lhumidité maximale :</string>
+    <string name="set_max_temperature">Régler la température maximale :</string>
 </resources>

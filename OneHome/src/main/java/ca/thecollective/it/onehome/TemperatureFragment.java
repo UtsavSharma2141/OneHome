@@ -63,14 +63,14 @@ public class TemperatureFragment extends Fragment {
         temp_seekbar = (SeekBar) view.findViewById(R.id.temp_seekbar);
         humidity_seekbar= (SeekBar) view.findViewById(R.id.humidity_seekbar);
 
-        max_temp.setText("Set Maximum Temperature: "+ temp_seekbar.getProgress() + "/"+temp_seekbar.getMax());
+        max_temp.setText(getString(R.string.set_max_temperature)+ temp_seekbar.getProgress() + "/"+temp_seekbar.getMax());
         temp_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
             int progress_value;
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 progress_value = progress;
-                max_temp.setText("Set Maximum Temperature: "+ progress + "/"+temp_seekbar.getMax());
+                max_temp.setText(getString(R.string.set_max_temperature)+ progress + "/"+temp_seekbar.getMax());
 
             }
 
@@ -81,19 +81,19 @@ public class TemperatureFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                max_temp.setText("Set Maximum Temperature: "+ progress_value + "/"+temp_seekbar.getMax());
+                max_temp.setText(getString(R.string.set_max_temperature)+ progress_value + "/"+temp_seekbar.getMax());
 
             }
         });
 
-        max_humidity.setText("Set Maximum Humidity: "+ humidity_seekbar.getProgress() + "/"+humidity_seekbar.getMax());
+        max_humidity.setText(getString(R.string.set_max_humidity)+ humidity_seekbar.getProgress() + "/"+humidity_seekbar.getMax());
         humidity_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
             int progress_value2;
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 progress_value2 = progress;
-                max_humidity.setText("Set Maximum Humidity: "+ progress + "/"+humidity_seekbar.getMax());
+                max_humidity.setText(getString(R.string.set_max_humidity)+ progress + "/"+humidity_seekbar.getMax());
 
             }
 
@@ -104,7 +104,7 @@ public class TemperatureFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                max_humidity.setText("Set Maximum Humidity: "+ progress_value2 + "/"+humidity_seekbar.getMax());
+                max_humidity.setText(getString(R.string.set_max_humidity)+ progress_value2 + "/"+humidity_seekbar.getMax());
 
             }
         });
