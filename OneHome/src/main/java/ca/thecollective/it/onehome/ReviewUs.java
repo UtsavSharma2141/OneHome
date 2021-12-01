@@ -80,16 +80,6 @@ public class ReviewUs extends AppCompatActivity {
                 }
 
                 else{
-//                    cardView.setVisibility(View.VISIBLE);
-//                    Handler handler = new Handler();
-//                    handler.postDelayed(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            btnsubmit.setEnabled(true);
-//                            cardView.setVisibility(View.GONE);
-//                            Toast.makeText(ReviewUs.this,"Data Entered Sussessfully.",Toast.LENGTH_SHORT).show();
-//                        }
-//                    }, 3000);
                     loadingBar.showDialog();
                      Handler handler = new Handler();
                      handler.postDelayed(new Runnable() {
@@ -106,8 +96,6 @@ public class ReviewUs extends AppCompatActivity {
                     member.setNumber(p);
                     member.setRating(s);
                     reference.push().setValue(member);
-
-                    //onBackPressed();
                 }
             }
         });
