@@ -10,13 +10,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.SeekBar;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
 import com.google.firebase.database.ChildEventListener;
@@ -34,6 +37,7 @@ public class TemperatureFragment extends Fragment {
 
     TextView temperature,humidity,max_temp,max_humidity;
     SeekBar temp_seekbar, humidity_seekbar;
+    Switch temp_switch, humidity_switch;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference mrootReference = firebaseDatabase.getReference();
     private DatabaseReference mchildReference = mrootReference.child("message");
@@ -62,6 +66,8 @@ public class TemperatureFragment extends Fragment {
         max_humidity= (TextView) view.findViewById(R.id.max_humidity);
         temp_seekbar = (SeekBar) view.findViewById(R.id.temp_seekbar);
         humidity_seekbar= (SeekBar) view.findViewById(R.id.humidity_seekbar);
+        temp_switch = (Switch) view.findViewById(R.id.temp_switch);
+        humidity_switch = (Switch) view.findViewById(R.id.humidity_switch);
 
         max_temp.setText(getString(R.string.set_max_temperature)+ temp_seekbar.getProgress() + "/"+temp_seekbar.getMax());
         temp_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -108,6 +114,37 @@ public class TemperatureFragment extends Fragment {
 
             }
         });
+
+        temp_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @SuppressLint("ResourceType")
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if (isChecked) {
+
+
+
+                } else {
+
+
+                }
+            }
+        });
+
+        humidity_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+
+
+                } else {
+
+
+                }
+            }
+        });
+
+
 
     }
 

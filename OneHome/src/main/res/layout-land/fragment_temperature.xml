@@ -123,6 +123,7 @@
             </LinearLayout>
 
             <Switch
+                android:id="@+id/temp_switch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="250dp"
@@ -165,6 +166,7 @@
 
 
             <Switch
+                android:id="@+id/humidity_switch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="250dp"
