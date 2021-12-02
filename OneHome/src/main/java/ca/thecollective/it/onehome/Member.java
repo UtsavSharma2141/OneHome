@@ -1,6 +1,10 @@
 package ca.thecollective.it.onehome;
 
 public class Member {
+
+    public Member(String name){
+        this.name=name;
+    }
     public String getEmail() {
         return email;
     }
