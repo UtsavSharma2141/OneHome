@@ -6,6 +6,12 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
     defaultConfig {
         applicationId "ca.thecollective.it.onehome"
         minSdkVersion 23
@@ -41,6 +47,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-database'
     implementation 'org.florescu.android.rangeseekbar:rangeseekbar-library:0.3.0'
+    testImplementation "org.robolectric:robolectric:3.3.2"
+    testImplementation "org.robolectric:robolectric:3.6.1"
 
 }
 apply plugin: 'com.google.gms.google-services'
