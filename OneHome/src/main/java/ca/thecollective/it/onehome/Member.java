@@ -2,12 +2,6 @@ package ca.thecollective.it.onehome;
 
 public class Member {
 
-    public Member(String name){
-        this.name=name;
-    }
-    public String getEmail() {
-        return email;
-    }
 
     public void setEmail(String email) {
         this.email = email;
@@ -43,6 +37,26 @@ public class Member {
 
     public void setRating(String rating) {
         this.rating = rating;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String email(String message){
+        return message;
+    }
+
+    public String name(String name){
+        return name;
+    }
+
+    public String rating(String rating){
+        return rating;
+    }
+
+    public String comment(String comment){
+        return comment;
     }
 
     public Member() {
