@@ -1,136 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Pratheep Chandrakumar N01376948 Section A-->
+<!--Dhruv Dave N01401657 Section A-->
+<!-- Sukhvir Singh Brar N01395820 Section A -->
+<!-- Utsav Sharma N01392141 Section A -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/white">
+    android:id="@+id/display_frag"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="10dp"
+    android:orientation="horizontal"
+    android:layout_marginTop="5sp">
 
-    <TextView
-        android:layout_width="280sp"
-        android:layout_height="50sp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="65sp"
-        android:layout_marginEnd="65sp"
-        android:layout_marginBottom="650sp"
-        android:text="@string/LCDTitle"
-        android:textColor="@color/green"
-        android:fontFamily="@font/pixel_font"
-        android:gravity="center"
-        android:textSize="23sp">
+    <LinearLayout
+        android:paddingBottom="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp">
 
-    </TextView>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/pixel_font"
+            android:gravity="center"
+            android:text="@string/LCDTitle"
+            android:textColor="@color/green"
+            android:textSize="30sp" />
 
-    <CheckBox
-        android:id="@+id/option1"
-        android:layout_width="275sp"
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="65dp"
-        android:layout_marginEnd="65sp"
-        android:layout_marginBottom="595sp"
-        android:fontFamily="@font/pixel_font"
-        android:text="@string/LcdOption1"
-        android:textColor="@color/green" />
+        android:layout_marginTop="70dp"
+        android:orientation="vertical">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/option2"
-        android:layout_width="695dp"
-        android:layout_height="53dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="183dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="175dp"
-        android:fontFamily="@font/pixel_font"
-        android:minHeight="48dp"
-        android:text="@string/LcdOption2"
-        android:textColor="@color/green"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        <CheckBox
+            android:id="@+id/checkoption"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="80sp"
+            android:layout_marginEnd="80sp"
+            android:layout_marginBottom="30sp"
+            android:fontFamily="@font/pixel_font"
+            android:text="@string/LcdOption1"
+            android:textColor="@color/green" />
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/option3"
-        android:layout_width="375sp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="15dp"
-        android:fontFamily="@font/pixel_font"
-        android:minHeight="50sp"
-        android:text="@string/LcdOption3"
-        android:textColor="@color/green"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/option2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="30sp"
+            android:fontFamily="@font/pixel_font"
+            android:minHeight="50sp"
+            android:text="@string/LcdOption2"
+            android:textColor="@color/green"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/option4"
-        android:layout_width="375sp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="127dp"
-        android:fontFamily="@font/pixel_font"
-        android:minHeight="50sp"
-        android:text="@string/LcdOption4"
-        android:textColor="@color/green" />
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/option3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="30sp"
+            android:fontFamily="@font/pixel_font"
+            android:minHeight="48dp"
+            android:text="@string/LcdOption3"
+            android:textColor="@color/green"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/option5"
-        android:layout_width="375sp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="76dp"
-        android:fontFamily="@font/pixel_font"
-        android:minHeight="50sp"
-        android:text="@string/LcdOption5"
-        android:textColor="@color/green" />
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/option4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="30sp"
+            android:fontFamily="@font/pixel_font"
+            android:minHeight="50sp"
+            android:text="@string/LcdOption4"
+            android:textColor="@color/green" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="295sp"
-        android:layout_height="55sp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="105sp"
-        android:layout_marginBottom="20sp"
-        android:textColor="@color/green"
-        android:hint="@string/InputLcd" />
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/option5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="30sp"
+            android:fontFamily="@font/pixel_font"
+            android:minHeight="50sp"
+            android:text="@string/LcdOption5"
+            android:textColor="@color/green" />
 
-    <Button
-        android:id="@+id/EnterButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="10sp"
-        android:layout_marginBottom="20sp"
-        android:textColor="@color/green"
-        android:backgroundTintMode="@color/white"
-        android:fontFamily="@font/pixel_font"
-        android:text="@string/EnterButtonText" />
+        <EditText
+            android:id="@+id/edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="30sp"
+            android:hint="@string/InputLcd"
+            android:maxLength="12"
+            android:textColor="@color/green" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="673dp"
-        android:layout_height="101dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="288dp"
-        app:srcCompat="@drawable/lcd_display" />
-
+        <Button
+            android:id="@+id/EnterButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150sp"
+            android:layout_marginEnd="150sp"
+            android:backgroundTintMode="@color/white"
+            android:fontFamily="@font/pixel_font"
+            android:text="@string/EnterButtonText"
+            android:textColor="@color/green" />
+        </ScrollView>
+    </LinearLayout>
 
 </RelativeLayout>
