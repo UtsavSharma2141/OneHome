@@ -1,117 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Pratheep Chandrakumar N01376948 Section A-->
+<!--Dhruv Dave N01401657 Section A-->
+<!-- Sukhvir Singh Brar N01395820 Section A -->
+<!-- Utsav Sharma N01392141 Section A -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/white">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/display_frag"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:layout_marginTop="5dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="77dp"
-        android:layout_marginEnd="102dp"
-        android:layout_marginBottom="475dp"
-        android:fontFamily="@font/tommy_soft"
-        android:gravity="center"
-        android:text="@string/SettingsTitleText"
-        android:textColor="@color/amber"
-        android:textSize="30sp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    </TextView>
+    <LinearLayout
+        android:paddingBottom="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp">
 
-    <Button
-        android:id="@+id/ApplySettingsButton"
-        android:layout_width="199dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="516dp"
-        android:layout_marginBottom="12dp"
-        android:backgroundTintMode="@color/white"
-        android:fontFamily="@font/tommy_soft"
-        android:text="@string/ApplyButton"
-        android:textColor="@color/amber" />
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/amber"
+            android:text="@string/SettingsTitleText"
+            android:fontFamily="@font/tommy_soft"
+            android:textSize="35sp">
+        </TextView>
+    </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:orientation="vertical">
 
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/DarkModeSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginBottom="0sp"
+                android:fontFamily="@font/tommy_soft"
+                android:text="@string/DarkModeText"
+                android:textColor="@color/amber"
+                android:textSize="30sp" />
 
-    <TextView
-        android:id="@+id/ApplySettings"
-        android:layout_width="210sp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="508dp"
-        android:layout_marginBottom="59dp"
-        android:fontFamily="@font/tommy_soft"
-        android:gravity="center"
-        android:text="@string/ApplySettingsButton"
-        android:textColor="@color/amber"
-        android:textSize="35sp" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0sp"
+                android:layout_marginEnd="0sp"
+                android:layout_marginBottom="0sp"
+                android:fontFamily="@font/tommy_soft"
+                android:gravity="center"
+                android:text="@string/LockScreenOption"
+                android:textColor="@color/amber"
+                android:textSize="30sp" />
 
-    <TextView
-        android:id="@+id/ChangeLan"
-        android:layout_width="405sp"
-        android:layout_height="35dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="668dp"
-        android:layout_marginBottom="419dp"
-        android:fontFamily="@font/tommy_soft"
-        android:text="@string/ChangeLanguageText"
-        android:textColor="@color/amber"
-        android:textSize="25sp" />
+            <ToggleButton
+                android:id="@+id/toggleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="300sp"
+                android:layout_marginEnd="300sp"
+                android:layout_marginBottom="0sp"
+                android:checked="false"
+                android:text="@string/LockScreenButton"
+                android:textOff="@string/off"
+                android:textOn="@string/on" />
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/DarkModeSwitch"
-        android:layout_width="694dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="256dp"
-        android:fontFamily="@font/tommy_soft"
-        android:minHeight="50sp"
-        android:text="@string/DarkModeText"
-        android:textColor="@color/amber"
-        android:textSize="25sp" />
+            <TextView
+                android:id="@+id/RingerText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0sp"
+                android:layout_marginEnd="0sp"
+                android:layout_marginBottom="10sp"
+                android:fontFamily="@font/tommy_soft"
+                android:gravity="center"
+                android:text="@string/Ringer_mode"
+                android:textColor="@color/amber"
+                android:textSize="30sp" />
 
-    <Button
-        android:id="@+id/ResetButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="13dp"
-        android:backgroundTintMode="@color/white"
-        android:fontFamily="@font/tommy_soft"
-        android:text="@string/ResetAppButton"
-        android:textColor="@color/amber" />
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0sp">
 
-    <ToggleButton
-        android:id="@+id/toggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="21dp"
-        android:layout_marginBottom="123dp"
-        android:text="@string/LockScreenButton" />
+                <Button
+                    android:id="@+id/silentmode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="0sp"
+                    android:layout_marginEnd="263.5sp"
+                    android:fontFamily="@font/tommy_soft"
+                    android:text="@string/Mute_button"
+                    android:textColor="@color/amber" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="234dp"
-        android:layout_height="36dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="491dp"
-        android:layout_marginBottom="139dp"
-        android:fontFamily="@font/tommy_soft"
-        android:text="@string/LockScreenOption"
-        android:textColor="@color/amber"
-        android:textSize="22sp" />
+                <Button
+                    android:id="@+id/ringermode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="263.5sp"
+                    android:layout_marginEnd="0sp"
+                    android:fontFamily="@font/tommy_soft"
+                    android:text="@string/unmute_button"
+                    android:textColor="@color/amber" />
+            </TableRow>
 
+            <Button
+                android:id="@+id/ResetButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="275sp"
+                android:layout_marginEnd="275sp"
+                android:layout_marginBottom="0sp"
+                android:backgroundTintMode="@color/white"
+                android:fontFamily="@font/tommy_soft"
+                android:gravity="center"
+                android:text="@string/ResetAppButton"
+                android:textColor="@color/amber" />
+
+        </LinearLayout>
+        </ScrollView>
 </RelativeLayout>
