@@ -32,106 +32,93 @@
 
     </LinearLayout>
 
-    <CheckBox
-        android:id="@+id/checkoption"
-        android:layout_width="275sp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/option2"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="83dp"
-        android:layout_marginEnd="83dp"
-        android:layout_marginBottom="62dp"
-        android:fontFamily="@font/pixel_font"
-        android:text="@string/LcdOption1"
-        android:textColor="@color/green" />
+        android:layout_marginTop="70dp"
+        android:orientation="vertical">
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/option2"
-        android:layout_width="375sp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/option3"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="53dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginBottom="11dp"
-        android:fontFamily="@font/pixel_font"
-        android:minHeight="50sp"
-        android:text="@string/LcdOption2"
-        android:textColor="@color/green"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        <CheckBox
+            android:id="@+id/checkoption"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="80sp"
+            android:layout_marginEnd="80sp"
+            android:layout_marginBottom="30sp"
+            android:fontFamily="@font/pixel_font"
+            android:text="@string/LcdOption1"
+            android:textColor="@color/green" />
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/option3"
-        android:layout_width="375sp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/option4"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="53dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="4dp"
-        android:fontFamily="@font/pixel_font"
-        android:minHeight="48dp"
-        android:text="@string/LcdOption3"
-        android:textColor="@color/green"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/option2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="30sp"
+            android:fontFamily="@font/pixel_font"
+            android:minHeight="50sp"
+            android:text="@string/LcdOption2"
+            android:textColor="@color/green"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/option4"
-        android:layout_width="375sp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/option5"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="33dp"
-        android:layout_marginBottom="6dp"
-        android:fontFamily="@font/pixel_font"
-        android:minHeight="50sp"
-        android:text="@string/LcdOption4"
-        android:textColor="@color/green" />
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/option3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="30sp"
+            android:fontFamily="@font/pixel_font"
+            android:minHeight="48dp"
+            android:text="@string/LcdOption3"
+            android:textColor="@color/green"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/option5"
-        android:layout_width="375sp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="126dp"
-        android:fontFamily="@font/pixel_font"
-        android:minHeight="50sp"
-        android:text="@string/LcdOption5"
-        android:textColor="@color/green" />
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/option4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="30sp"
+            android:fontFamily="@font/pixel_font"
+            android:minHeight="50sp"
+            android:text="@string/LcdOption4"
+            android:textColor="@color/green" />
 
-    <EditText
-        android:id="@+id/edit"
-        android:layout_width="293dp"
-        android:layout_height="43dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="7dp"
-        android:layout_marginEnd="-3dp"
-        android:layout_marginBottom="62dp"
-        android:layout_toStartOf="@+id/EnterButton"
-        android:hint="@string/InputLcd"
-        android:maxLength="12"
-        android:textColor="@color/green" />
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/option5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="30sp"
+            android:fontFamily="@font/pixel_font"
+            android:minHeight="50sp"
+            android:text="@string/LcdOption5"
+            android:textColor="@color/green" />
 
-    <Button
-        android:id="@+id/EnterButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="65dp"
-        android:backgroundTintMode="@color/white"
-        android:fontFamily="@font/pixel_font"
-        android:text="@string/EnterButtonText"
-        android:textColor="@color/green" />
+        <EditText
+            android:id="@+id/edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="30sp"
+            android:hint="@string/InputLcd"
+            android:maxLength="12"
+            android:textColor="@color/green" />
+
+        <Button
+            android:id="@+id/EnterButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150sp"
+            android:layout_marginEnd="150sp"
+            android:backgroundTintMode="@color/white"
+            android:fontFamily="@font/pixel_font"
+            android:text="@string/EnterButtonText"
+            android:textColor="@color/green" />
+    </LinearLayout>
 </RelativeLayout>
