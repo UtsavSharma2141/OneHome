@@ -21,7 +21,7 @@
         android:padding="10dp">
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="0sp"
             android:layout_height="38dp"
             android:layout_weight="1"
             android:fontFamily="@font/pixel_font"
