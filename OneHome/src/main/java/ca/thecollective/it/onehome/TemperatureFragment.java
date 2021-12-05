@@ -122,7 +122,7 @@ public class TemperatureFragment extends Fragment {
 
                 if (isChecked) {
 
-                    Toast.makeText(getActivity(), "Maximum Temperature Setted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), getResources().getString(R.string.switch_max_temp), Toast.LENGTH_SHORT).show();
 
 
 
@@ -138,7 +138,7 @@ public class TemperatureFragment extends Fragment {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
 
-                    Toast.makeText(getActivity(), "Maximum Humidity Setted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), getResources().getString(R.string.switch_max_humidity), Toast.LENGTH_SHORT).show();
 
 
 

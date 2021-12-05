@@ -77,5 +77,7 @@
     <string name="allow_call_perm">You have allowed the Call Permission</string>
     <string name="set_max_humidity">Set Maximum Humidity: </string>
     <string name="set_max_temperature">Set Maximum Temperature: </string>
+    <string name="switch_max_temp">Maximum Temperature Setted</string>
+    <string name="switch_max_humidity">Maximum Humidity Setted</string>
 
 </resources>
