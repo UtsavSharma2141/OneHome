@@ -81,6 +81,5 @@
     <string name="switch_max_humidity">Maximum Humidity Setted</string>
     <string name="unmute_button">Unmute</string>
     <string name="Mute_button">Mute</string>
-    <string name="Ringer_mode">Ringer Mode</string>
-
+    <string name="Ringer_mode">Volume Control</string>
 </resources>

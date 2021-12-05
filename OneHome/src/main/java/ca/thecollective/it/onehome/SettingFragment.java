@@ -53,6 +53,7 @@ public class SettingFragment extends Fragment {
         reset = (Button) view.findViewById(R.id.ResetButton);
         slientmode = (Button) view.findViewById(R.id.silentmode);
         ringermode = (Button) view.findViewById(R.id.ringermode);
+        myAudioManager = (AudioManager) getContext().getSystemService(AUDIO_SERVICE);
 
         //dark mode switch
         darkswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -91,9 +92,8 @@ public class SettingFragment extends Fragment {
         slientmode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myAudioManager = (AudioManager) getContext().getSystemService(Context.AUDIO_SERVICE);
-                myAudioManager.setRingerMode(AudioManager.RINGER_MODE_SILENT);
-                Toast.makeText(getActivity(), "Phone is slient", Toast.LENGTH_SHORT).show();
+                myAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC,AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI);
+                Toast.makeText(getActivity(), "Muted", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -101,9 +101,8 @@ public class SettingFragment extends Fragment {
         ringermode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myAudioManager = (AudioManager) getContext().getSystemService(Context.AUDIO_SERVICE);
-                myAudioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
-                Toast.makeText(getActivity(), "Phone is on ringer", Toast.LENGTH_SHORT).show();
+                myAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC,AudioManager.ADJUST_LOWER, AudioManager.FLAG_SHOW_UI);
+                Toast.makeText(getActivity(), "UnMuted", Toast.LENGTH_SHORT).show();
             }
         });
 
