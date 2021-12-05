@@ -27,6 +27,7 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.switchmaterial.SwitchMaterial;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class DisplayFragment extends Fragment {
 
@@ -39,6 +40,7 @@ public class DisplayFragment extends Fragment {
     View.OnClickListener mOnClickListener;
     EditText Text;
     String TextValue;
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 
     @Nullable
     @Override
@@ -108,11 +110,13 @@ public class DisplayFragment extends Fragment {
                     // Show the switch button checked status as toast message
                     Toast.makeText(getActivity(),
                             "Temperature Display is On", Toast.LENGTH_SHORT).show();
+                    firebaseDatabase.getReference().child("LCD").child("Status").setValue(1);
                 } else {
                     // If the switch button is off
                     // Show the switch button checked status as toast message
                     Toast.makeText(getActivity(),
                             "Temperature Display is Off", Toast.LENGTH_SHORT).show();
+                    firebaseDatabase.getReference().child("LCD").child("Status").setValue(0);
                 }
             }
         });
@@ -125,11 +129,13 @@ public class DisplayFragment extends Fragment {
                     // Show the switch button checked status as toast message
                     Toast.makeText(getActivity(),
                             "Motion Display is On", Toast.LENGTH_SHORT).show();
+                    firebaseDatabase.getReference().child("LCD").child("Motion").setValue(1);
                 } else {
                     // If the switch button is off
                     // Show the switch button checked status as toast message
                     Toast.makeText(getActivity(),
                             "Motion Display is Off", Toast.LENGTH_SHORT).show();
+                    firebaseDatabase.getReference().child("LCD").child("Motion").setValue(0);
                 }
             }
         });
@@ -142,11 +148,13 @@ public class DisplayFragment extends Fragment {
                     // Show the switch button checked status as toast message
                     Toast.makeText(getActivity(),
                             "Curtain Status On", Toast.LENGTH_SHORT).show();
+                    firebaseDatabase.getReference().child("LCD").child("Curtain").setValue(1);
                 } else {
                     // If the switch button is off
                     // Show the switch button checked status as toast message
                     Toast.makeText(getActivity(),
                             "Curtain Status Off", Toast.LENGTH_SHORT).show();
+                    firebaseDatabase.getReference().child("LCD").child("Curtain").setValue(0);
                 }
             }
         });
