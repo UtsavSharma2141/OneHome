@@ -1,5 +1,6 @@
 package ca.thecollective.it.onehome;
 
+import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
@@ -11,13 +12,12 @@ import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.pressBack;
+import static androidx.test.espresso.action.ViewActions.pressMenuKey;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withInputType;
+import static androidx.test.espresso.matcher.ViewMatchers.withResourceName;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static java.util.EnumSet.allOf;
 import static java.util.regex.Pattern.matches;
-import static org.hamcrest.Matchers.containsString;
-import static org.junit.Assert.*;
 
 @RunWith(AndroidJUnit4.class)
 public class MainActivityInstrumentedTest {
@@ -25,18 +25,30 @@ public class MainActivityInstrumentedTest {
     @Rule
     public ActivityScenarioRule<MainActivity> activityScenarioRule = new ActivityScenarioRule<>(MainActivity.class);
 
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
-
     @Test
-    public void ButtonIsClicked(){
+    public void isButtonClicked(){
         onView(withId(R.id.review_us))
                 .perform(click());
     }
+
+    @Test
+    public void isTextCorrected(){
+        onView(withText("Review Us")).perform(click());
+    }
+
+    @Test
+    public void isImageClicked(){
+        onView(withId(R.id.welcome_img)).perform(click());
+    }
+
+    @Test
+    public void isTextSelected(){
+        onView(withId(R.id.welcome_screen_message)).perform(click());
+    }
+
+    @Test
+    public void contactUsSelected(){
+        onView(withId(R.id.menu_contactus)).perform(click());
+    }
+
 }
