@@ -83,4 +83,6 @@
     <string name="unmute_button">Unmute</string>
     <string name="Mute_button">Mute</string>
     <string name="Ringer_mode">Ringer Mode</string>
+    <string name="max_temp_notification">You have successfully set the maximum humidity limit.</string>
+    <string name="max_humidity_notification">You have successfully set the maximum temperature limit.</string>
 </resources>
