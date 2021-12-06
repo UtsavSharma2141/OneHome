@@ -20,6 +20,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -28,6 +29,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -79,6 +82,27 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+//        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+//        if (networkInfo == null || !!networkInfo.isConnected() || !networkInfo.isAvailable()){
+//            AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+//            builder1.setCancelable(false);
+//            builder1.setTitle("Internet Connection is not avaialble");
+//            builder1.setMessage("Please Retry");
+//            builder1.setIcon(R.drawable.ic_action_exit);
+//            builder1.setPositiveButton(R.string.exit_yes, new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    recreate();
+//                }
+//            });
+//
+//
+//        }
+//        else {
+//
+//        }
 
         rateusButton = findViewById(R.id.review_us);
 
