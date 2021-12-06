@@ -4,12 +4,15 @@
 * Pratheep Chandrakumar N01376948 Section A*/
 package ca.thecollective.it.onehome;
 
+import static android.content.Context.AUDIO_SERVICE;
+
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -35,7 +38,9 @@ public class SettingFragment extends Fragment {
     ToggleButton toggle;
     SwitchMaterial darkswitch;
     Button reset;
-    Button apply;
+    Button slientmode;
+    Button ringermode;
+    private AudioManager myAudioManager;
 
 
     @Nullable
@@ -46,7 +51,9 @@ public class SettingFragment extends Fragment {
         toggle = (ToggleButton) view.findViewById(R.id.toggleButton);
         darkswitch = (SwitchMaterial) view.findViewById(R.id.DarkModeSwitch);
         reset = (Button) view.findViewById(R.id.ResetButton);
-        apply = (Button) view.findViewById(R.id.ApplySettingsButton);
+        slientmode = (Button) view.findViewById(R.id.silentmode);
+        ringermode = (Button) view.findViewById(R.id.ringermode);
+        myAudioManager = (AudioManager) getContext().getSystemService(AUDIO_SERVICE);
 
         //dark mode switch
         darkswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -78,6 +85,24 @@ public class SettingFragment extends Fragment {
                     getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
                     Toast.makeText(getActivity(), getResources().getString(R.string.screen_unlocked), Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        //slientmode button
+        slientmode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC,AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI);
+                Toast.makeText(getActivity(), "Muted", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //ringermode button
+        ringermode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC,AudioManager.ADJUST_LOWER, AudioManager.FLAG_SHOW_UI);
+                Toast.makeText(getActivity(), "UnMuted", Toast.LENGTH_SHORT).show();
             }
         });
 
