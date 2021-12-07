@@ -143,10 +143,8 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
                 sendIntent.setAction(Intent.ACTION_SEND);
                 sendIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.app_link));
                 sendIntent.setType("text/plain");
-
                 Intent shareIntent = Intent.createChooser(sendIntent, null);
                 startActivity(shareIntent);
-
                 return true;
 
             case R.id.menu_contactus:
@@ -164,7 +162,6 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
                 startActivity(new Intent(Intent.ACTION_VIEW,
                         Uri.parse("https://www.consumeraffairs.com/homeowners/how-to-secure-your-home.html")));
                 return true;
-
 
         }
         return super.onOptionsItemSelected(item);
@@ -209,7 +206,6 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            //super.onBackPressed();
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setCancelable(false);
             builder.setTitle(R.string.alertbar_confirm_exit);
@@ -218,7 +214,6 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
             builder.setPositiveButton(R.string.exit_yes, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    //finishAffinity();
                     finish();
                 }
             });
@@ -255,9 +250,7 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
                             dialog.dismiss();
                         }
                     }).create().show();
-        }
-        else
-        {
+        } else {
             ActivityCompat.requestPermissions(this,new String[]{CALL_PHONE},REQUEST_PERMISSION);
         }
     }
@@ -267,7 +260,6 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
         if(ContextCompat.checkSelfPermission(MainActivity.this, CALL_PHONE)== PackageManager.PERMISSION_GRANTED)
         {
             startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:6476199611")));
-
             if(ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, CALL_PHONE))
             {
 
@@ -275,13 +267,9 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
             else
             {
                 ActivityCompat.requestPermissions(this,new String[]{CALL_PHONE},REQUEST_PERMISSION);
-
             }
-        }
-        else {
-
+        } else {
             requestCallPermission();
-
         }
     }
 
@@ -294,14 +282,9 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
                 Snackbar snackbar = Snackbar.make(findViewById(R.id.coordinatorLayout), R.string.snackbar_granted_permissions, Snackbar.LENGTH_LONG);
                 snackbar.show();
                 addNotification();
-
-
             } else {
-
                 Snackbar snackbar = Snackbar.make(findViewById(R.id.coordinatorLayout), R.string.snackbar_denied_permissions, Snackbar.LENGTH_LONG);
                 snackbar.show();
-
-
             }
         }
     }
@@ -328,10 +311,6 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
 
         NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         manager.notify(0,builder.build());
-
-
-
-
     }
 
     private void CreateNotificationChannel(){
@@ -352,55 +331,28 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
 
     private void checkConnection() {
 
-        // initialize intent filter
         IntentFilter intentFilter = new IntentFilter();
-
-        // add action
         intentFilter.addAction("android.new.conn.CONNECTIVITY_CHANGE");
-
-        // register receiver
         registerReceiver(new ConnectionReceiver(), intentFilter);
-
-        // Initialize listener
         ConnectionReceiver.Listener = this;
-
-        // Initialize connectivity manager
         ConnectivityManager manager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-
-        // Initialize network info
         NetworkInfo networkInfo = manager.getActiveNetworkInfo();
-
-        // get connection status
         boolean isConnected = networkInfo != null && networkInfo.isConnectedOrConnecting();
-
-        // display snack bar
         showSnackBar(isConnected);
     }
 
     private void showSnackBar(boolean isConnected) {
 
-        // initialize color and message
         String message;
         int color;
 
-        // check condition
+
         if (isConnected) {
-
-            // when internet is connected
-            // set message
             message = "Connected to Internet";
-
-            // set text color
             color = Color.WHITE;
 
         } else {
-
-            // when internet
-            // is disconnected
-            // set message
             message = "Internet is not connected";
-
-            // set text color
             color = Color.WHITE;
             Snackbar snackbar = Snackbar.make(findViewById(R.id.coordinatorLayout), message, Snackbar.LENGTH_LONG).setAction("Setting", new View.OnClickListener() {
                 @Override
@@ -408,44 +360,30 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
                     startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
                 }
             });
-            // initialize view
+
             View view = snackbar.getView();
-
-            // Assign variable
             TextView textView = view.findViewById(R.id.snackbar_text);
-
-            // set text color
             textView.setTextColor(color);
-
-            // show snack bar
             snackbar.show();
         }
-
-
-
-
-
     }
 
 
 
     @Override
     public void onNetworkChange(boolean isConnected) {
-        // display snack bar
         showSnackBar(isConnected);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        // call method
         checkConnection();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        // call method
         checkConnection();
     }
 }
