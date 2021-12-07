@@ -80,9 +80,9 @@
     <string name="set_max_temperature">Régler la température maximale :</string>
     <string name="switch_max_temp">Température maximale réglée</string>
     <string name="switch_max_humidity">Humidité maximale définie</string>
-    <string name="unmute_button">Unmute</string>
-    <string name="Mute_button">Mute</string>
-    <string name="Ringer_mode">Ringer Mode</string>
-    <string name="max_temp_notification">You have successfully set the maximum humidity limit.</string>
-    <string name="max_humidity_notification">You have successfully set the maximum temperature limit.</string>
+    <string name="unmute_button">Rétablir le son</string>
+    <string name="Mute_button">Muet</string>
+    <string name="Ringer_mode">Contrôle du volume</string>
+    <string name="max_temp_notification">Vous avez réglé avec succès la limite d\'humidité maximale.</string>
+    <string name="max_humidity_notification">Vous avez réglé avec succès la limite de température maximale.</string>
 </resources>

@@ -71,14 +71,14 @@
     <string name="screen_unlocked">Screen is Unlocked</string>
     <string name="app_reset">App Reset</string>
     <string name="field_empty">One or more fields are empty</string>
-    <string name="field_success">Data Entered Sussessfully.</string>
+    <string name="field_success">Data Entered Successfully.</string>
     <string name="curtain_open">Curtain is opened</string>
     <string name="curtain_close">Curtain is closed</string>
     <string name="allow_call_perm">You have allowed the Call Permission</string>
     <string name="set_max_humidity">Set Maximum Humidity: </string>
     <string name="set_max_temperature">Set Maximum Temperature: </string>
-    <string name="switch_max_temp">Maximum Temperature Setted</string>
-    <string name="switch_max_humidity">Maximum Humidity Setted</string>
+    <string name="switch_max_temp">Maximum Temperature Set</string>
+    <string name="switch_max_humidity">Maximum Humidity Set</string>
     <string name="unmute_button">Unmute</string>
     <string name="Mute_button">Mute</string>
     <string name="Ringer_mode">Volume Control</string>
