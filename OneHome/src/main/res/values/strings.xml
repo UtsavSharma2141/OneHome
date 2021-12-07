@@ -4,7 +4,7 @@
 <!-- Sukhvir Singh Brar N01395820 Section A -->
 <resources>
     <string name="app_name">OneHome</string>
-    <string name="Base_String">Welcome to OneHome App!</string>
+    <string name="Base_String">Maintain Home With OneHome</string>
     <string name="exit_dialouge">Do you want to exit from the app?</string>
     <string name="exit_yes">Yes</string>
     <string name="exit_no">No</string>
