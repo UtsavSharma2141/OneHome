@@ -10,6 +10,8 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -40,6 +42,8 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
+import io.github.muddz.styleabletoast.StyleableToast;
+
 import static androidx.core.content.ContextCompat.getSystemService;
 
 public class TemperatureFragment extends Fragment {
@@ -47,6 +51,7 @@ public class TemperatureFragment extends Fragment {
     TextView temperature, humidity, max_temp, max_humidity;
     SeekBar temp_seekbar, humidity_seekbar;
     private final String CHANNEL_ID = "Notification";
+    private final String CHANNEL_ID2 = "Notification";
     Switch temp_switch, humidity_switch;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference mrootReference = firebaseDatabase.getReference();
@@ -151,7 +156,8 @@ public class TemperatureFragment extends Fragment {
                 if (isChecked) {
                     addNotificationHumidity();
 
-                    Toast.makeText(getActivity(), getResources().getString(R.string.switch_max_humidity), Toast.LENGTH_SHORT).show();
+                     Toast.makeText(getActivity(), getResources().getString(R.string.switch_max_humidity), Toast.LENGTH_SHORT).show();
+
 
 
                 } else {
@@ -220,7 +226,7 @@ public class TemperatureFragment extends Fragment {
 
     private void addNotificationHumidity(){
         CreateNotificationChannelHumidity();
-        NotificationCompat.Builder builder= new NotificationCompat.Builder(getActivity(),CHANNEL_ID)
+        NotificationCompat.Builder builder= new NotificationCompat.Builder(getActivity(),CHANNEL_ID2)
                 .setSmallIcon(R.mipmap.ic_launcher_round)
                 .setContentTitle(getString(R.string.max_humidity_notification));
 
@@ -259,7 +265,7 @@ public class TemperatureFragment extends Fragment {
             String description = "Maximum humidity has been Set.";
             int importance = NotificationManager.IMPORTANCE_HIGH;
 
-            NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, name, importance);
+            NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID2, name, importance);
             notificationChannel.setDescription(description);
             NotificationManager notificationManager = ( NotificationManager ) getActivity().getSystemService( getActivity().NOTIFICATION_SERVICE );
             notificationManager.createNotificationChannel(notificationChannel);

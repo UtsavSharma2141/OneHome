@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.app.AlertDialog;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
@@ -42,7 +43,7 @@ public class ReviewUs extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ReviewUs.this, "This will take to the Google play store to rate and write review of this app", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ReviewUs.this, "This will take to the Google play store to rate and write review of this app", Toast.LENGTH_SHORT);
             }
         });
 
@@ -76,7 +77,7 @@ public class ReviewUs extends AppCompatActivity {
 
                 //if one or more fields are empty
                 if(name.getText().toString().isEmpty() || phone.getText().toString().isEmpty() || email.getText().toString().isEmpty() || comment.getText().toString().isEmpty()){
-                    Toast.makeText(ReviewUs.this, getResources().getString(R.string.field_empty), Toast.LENGTH_SHORT).show();
+                     Toast.makeText(ReviewUs.this, getResources().getString(R.string.field_empty), Toast.LENGTH_SHORT).show();
                 }
 
                 else{
