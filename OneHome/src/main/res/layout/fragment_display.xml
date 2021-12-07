@@ -29,7 +29,6 @@
             android:text="@string/LCDTitle"
             android:textColor="@color/green"
             android:textSize="30sp" />
-
     </LinearLayout>
 
     <LinearLayout

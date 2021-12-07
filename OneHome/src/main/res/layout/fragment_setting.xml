@@ -126,8 +126,5 @@
             android:gravity="center"
             android:text="@string/ResetAppButton"
             android:textColor="@color/amber" />
-
-
     </LinearLayout>
-
 </RelativeLayout>
