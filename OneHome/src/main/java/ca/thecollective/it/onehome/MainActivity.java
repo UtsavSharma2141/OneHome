@@ -27,14 +27,17 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
+import android.provider.Settings;
 import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -62,7 +65,7 @@ import static android.Manifest.permission.RECORD_AUDIO;
 import static android.Manifest.permission.SEND_SMS;
 
 public class
-MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ConnectionReceiver.ReceiverListener {
     public static int REQUEST_PERMISSION=1;
     private final String CHANNEL_ID = "Notification";
     private final int NOTIFICATION_ID =001;
@@ -82,6 +85,7 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        checkConnection();
 
 //        ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 //        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
@@ -367,5 +371,102 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
 
     }
 
+    private void checkConnection() {
 
+        // initialize intent filter
+        IntentFilter intentFilter = new IntentFilter();
+
+        // add action
+        intentFilter.addAction("android.new.conn.CONNECTIVITY_CHANGE");
+
+        // register receiver
+        registerReceiver(new ConnectionReceiver(), intentFilter);
+
+        // Initialize listener
+        ConnectionReceiver.Listener = this;
+
+        // Initialize connectivity manager
+        ConnectivityManager manager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        // Initialize network info
+        NetworkInfo networkInfo = manager.getActiveNetworkInfo();
+
+        // get connection status
+        boolean isConnected = networkInfo != null && networkInfo.isConnectedOrConnecting();
+
+        // display snack bar
+        showSnackBar(isConnected);
+    }
+
+    private void showSnackBar(boolean isConnected) {
+
+        // initialize color and message
+        String message;
+        int color;
+
+        // check condition
+        if (isConnected) {
+
+            // when internet is connected
+            // set message
+            message = "Connected to Internet";
+
+            // set text color
+            color = Color.WHITE;
+
+        } else {
+
+            // when internet
+            // is disconnected
+            // set message
+            message = "Internet is not connected";
+
+            // set text color
+            color = Color.WHITE;
+            Snackbar snackbar = Snackbar.make(findViewById(R.id.coordinatorLayout), message, Snackbar.LENGTH_LONG).setAction("Setting", new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
+                }
+            });
+            // initialize view
+            View view = snackbar.getView();
+
+            // Assign variable
+            TextView textView = view.findViewById(R.id.snackbar_text);
+
+            // set text color
+            textView.setTextColor(color);
+
+            // show snack bar
+            snackbar.show();
+        }
+
+
+
+
+
+    }
+
+
+
+    @Override
+    public void onNetworkChange(boolean isConnected) {
+        // display snack bar
+        showSnackBar(isConnected);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // call method
+        checkConnection();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // call method
+        checkConnection();
+    }
 }
