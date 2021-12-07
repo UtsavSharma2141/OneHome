@@ -14,14 +14,12 @@
     android:orientation="vertical"
     android:layout_marginTop="5dp">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
     <LinearLayout
         android:paddingBottom="50dp"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:layout_margin="25dp">
 
         <TextView
             android:layout_width="0sp"
@@ -131,5 +129,5 @@
                 android:text="@string/ResetAppButton"
                 android:textColor="@color/amber" />
         </LinearLayout>
-    </ScrollView>
+
 </RelativeLayout>
