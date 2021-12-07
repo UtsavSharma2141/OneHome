@@ -60,14 +60,9 @@ public class SettingFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    // If the switch button is on
-                    // Show the switch button checked status as toast message
                     Toast.makeText(getActivity(), getResources().getString(R.string.dark_enable), Toast.LENGTH_SHORT).show();
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-
                 } else {
-                    // If the switch button is off
-                    // Show the switch button checked status as toast message
                     Toast.makeText(getActivity(), getResources().getString(R.string.dark_disable), Toast.LENGTH_SHORT).show();
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
@@ -75,7 +70,6 @@ public class SettingFragment extends Fragment {
             }
         });
 
-        //togglebutton
         toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
@@ -88,7 +82,6 @@ public class SettingFragment extends Fragment {
             }
         });
 
-        //slientmode button
         slientmode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,7 +90,6 @@ public class SettingFragment extends Fragment {
             }
         });
 
-        //ringermode button
         ringermode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,8 +98,6 @@ public class SettingFragment extends Fragment {
             }
         });
 
-
-        //reset button
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,10 +110,6 @@ public class SettingFragment extends Fragment {
                     startActivity(intent);
             }
         });
-
-
         return view;
     }
-
-
 }
