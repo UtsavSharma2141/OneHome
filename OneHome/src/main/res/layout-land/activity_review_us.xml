@@ -32,7 +32,7 @@
         android:layout_above="@+id/Phone"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="83dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginBottom="-12dp"
         android:hint="@string/NameString"
         tools:ignore="TextContrastCheck,TextContrastCheck,TextContrastCheck"
         android:autofillHints="" />

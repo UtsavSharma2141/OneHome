@@ -49,18 +49,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/review_us"
-            android:text="Review Us"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:foregroundGravity="center"
-            android:layout_marginTop="580dp"
-            android:layout_marginLeft="105dp"
-            >
+            <Button
+                android:id="@+id/review_us"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="105dp"
+                android:layout_marginTop="580dp"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:text="Review Us">
 
-        </Button>
+            </Button>
         </LinearLayout>
 
         

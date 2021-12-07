@@ -29,7 +29,6 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="fullSensor"
-            android:configChanges="orientation|screenSize|keyboardHidden"
             android:theme="@style/Theme.OneHome.NoActionbar"
             android:parentActivityName="ca.thecollective.it.onehome.ReviewUs">
 
