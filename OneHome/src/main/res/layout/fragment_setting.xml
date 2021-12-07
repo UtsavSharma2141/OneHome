@@ -100,7 +100,7 @@
                 android:layout_marginEnd="104sp"
                 android:fontFamily="@font/tommy_soft"
                 android:textColor="@color/amber"
-                android:text="@string/Mute_button" />
+                android:text="@string/unmute_button" />
 
             <Button
                 android:id="@+id/ringermode"
@@ -111,7 +111,7 @@
                 android:layout_marginEnd="0sp"
                 android:fontFamily="@font/tommy_soft"
                 android:textColor="@color/amber"
-                android:text="@string/unmute_button" />
+                android:text="@string/Mute_button" />
         </TableRow>
 
         <Button

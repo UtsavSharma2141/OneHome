@@ -4,7 +4,6 @@
 <!-- Sukhvir Singh Brar N01395820 Section A -->
 <!-- Utsav Sharma N01392141 Section A -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,9 +11,7 @@
     android:padding="10dp"
     android:background="@color/white"
     android:orientation="vertical"
-    android:layout_marginTop="5dp"
-
-    >
+    android:layout_marginTop="5dp">
 
     <ScrollView
         android:layout_width="match_parent"

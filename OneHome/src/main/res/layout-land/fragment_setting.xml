@@ -12,11 +12,8 @@
     android:background="@color/white"
     android:padding="10dp"
     android:orientation="vertical"
-    android:layout_marginTop="5dp">
+    android:layout_marginTop="50sp">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
     <LinearLayout
         android:paddingBottom="50dp"
         android:layout_width="match_parent"
@@ -103,7 +100,7 @@
                     android:layout_marginStart="0sp"
                     android:layout_marginEnd="263.5sp"
                     android:fontFamily="@font/tommy_soft"
-                    android:text="@string/Mute_button"
+                    android:text="@string/unmute_button"
                     android:textColor="@color/amber" />
 
                 <Button
@@ -114,7 +111,7 @@
                     android:layout_marginStart="263.5sp"
                     android:layout_marginEnd="0sp"
                     android:fontFamily="@font/tommy_soft"
-                    android:text="@string/unmute_button"
+                    android:text="@string/Mute_button"
                     android:textColor="@color/amber" />
             </TableRow>
 
@@ -131,5 +128,4 @@
                 android:text="@string/ResetAppButton"
                 android:textColor="@color/amber" />
         </LinearLayout>
-    </ScrollView>
 </RelativeLayout>
