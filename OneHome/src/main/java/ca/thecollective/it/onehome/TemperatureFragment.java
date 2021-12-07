@@ -82,6 +82,8 @@ public class TemperatureFragment extends Fragment {
         humidity_seekbar = (SeekBar) view.findViewById(R.id.humidity_seekbar);
         temp_switch = (Switch) view.findViewById(R.id.temp_switch);
         humidity_switch = (Switch) view.findViewById(R.id.humidity_switch);
+        temp_switch.setEnabled(false);
+        humidity_switch.setEnabled(false);
 
         max_temp.setText(getString(R.string.set_max_temperature) + temp_seekbar.getProgress() + "/" + temp_seekbar.getMax());
         temp_seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -92,6 +94,7 @@ public class TemperatureFragment extends Fragment {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 progress_value = progress;
                 max_temp.setText(getString(R.string.set_max_temperature) + progress + "/" + temp_seekbar.getMax());
+                temp_switch.setEnabled(false);
 
             }
 
@@ -103,6 +106,7 @@ public class TemperatureFragment extends Fragment {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 max_temp.setText(getString(R.string.set_max_temperature) + progress_value + "/" + temp_seekbar.getMax());
+                temp_switch.setEnabled(true);
 
             }
         });
@@ -116,6 +120,7 @@ public class TemperatureFragment extends Fragment {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 progress_value2 = progress;
                 max_humidity.setText(getString(R.string.set_max_humidity) + progress + "/" + humidity_seekbar.getMax());
+                humidity_switch.setEnabled(false);
 
             }
 
@@ -127,6 +132,7 @@ public class TemperatureFragment extends Fragment {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 max_humidity.setText(getString(R.string.set_max_humidity) + progress_value2 + "/" + humidity_seekbar.getMax());
+                humidity_switch.setEnabled(true);
 
             }
         });

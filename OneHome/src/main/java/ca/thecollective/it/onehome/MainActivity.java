@@ -87,27 +87,6 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
         setContentView(R.layout.activity_main);
         checkConnection();
 
-//        ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-//        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-//        if (networkInfo == null || !!networkInfo.isConnected() || !networkInfo.isAvailable()){
-//            AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
-//            builder1.setCancelable(false);
-//            builder1.setTitle("Internet Connection is not avaialble");
-//            builder1.setMessage("Please Retry");
-//            builder1.setIcon(R.drawable.ic_action_exit);
-//            builder1.setPositiveButton(R.string.exit_yes, new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialog, int which) {
-//                    recreate();
-//                }
-//            });
-//
-//
-//        }
-//        else {
-//
-//        }
-
         rateusButton = findViewById(R.id.review_us);
 
         msgTxt = findViewById(R.id.welcome_screen_message);
