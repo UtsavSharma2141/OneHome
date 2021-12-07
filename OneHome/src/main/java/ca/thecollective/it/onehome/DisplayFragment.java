@@ -168,12 +168,14 @@ public class DisplayFragment extends Fragment {
                     Toast.makeText(getActivity(),
                             "Custom Text Display On", Toast.LENGTH_SHORT).show();
                     EnterButton.setEnabled(true);
+                    firebaseDatabase.getReference().child("LCD").child("Message").setValue(1);
                 } else {
                     // If the switch button is off
                     // Show the switch button checked status as toast message
                     Toast.makeText(getActivity(),
                             "Custom Text Display Off", Toast.LENGTH_SHORT).show();
                     EnterButton.setEnabled(false);
+                    firebaseDatabase.getReference().child("LCD").child("Message").setValue(0);
                 }
             }
         });
@@ -188,6 +190,7 @@ public class DisplayFragment extends Fragment {
                 }else {
                     //if textbox is not empty
                     Toast.makeText(getActivity(), "Text: " + Message + "\n is sent to display", Toast.LENGTH_LONG).show();
+                    firebaseDatabase.getReference().child("Text").push().setValue(Message);
                 }
             }
         });
