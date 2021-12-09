@@ -66,9 +66,6 @@ import static android.Manifest.permission.SEND_SMS;
 
 public class
 MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ConnectionReceiver.ReceiverListener {
-    public static int REQUEST_PERMISSION=1;
-    private final String CHANNEL_ID = "Notification";
-    private final int NOTIFICATION_ID =001;
     TextView msgTxt;
     Button rateusButton;
 
@@ -148,7 +145,10 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
                 return true;
 
             case R.id.menu_contactus:
-                permission_fn();
+                String number = "7777777777";
+                Uri call = Uri.parse("tel:" + number);
+                Intent intentCall = new Intent(Intent.ACTION_DIAL, call);
+                startActivity(intentCall);
                 return true;
 
             case R.id.menu_feedback:
@@ -229,66 +229,6 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
         }
 
     }
-
-
-    private  void requestCallPermission()
-    {
-        if(ActivityCompat.shouldShowRequestPermissionRationale(this, CALL_PHONE))
-        {
-            new AlertDialog.Builder(this)
-                    .setTitle(R.string.permissions2)
-                    .setMessage(R.string.permissions3)
-                    .setPositiveButton(R.string.alertbar_ok, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            ActivityCompat.requestPermissions(MainActivity.this,new String[]{CALL_PHONE},REQUEST_PERMISSION);
-                        }
-                    })
-                    .setNegativeButton(R.string.alertbar_no, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    }).create().show();
-        } else {
-            ActivityCompat.requestPermissions(this,new String[]{CALL_PHONE},REQUEST_PERMISSION);
-        }
-    }
-
-    private void permission_fn()
-    {
-        if(ContextCompat.checkSelfPermission(MainActivity.this, CALL_PHONE)== PackageManager.PERMISSION_GRANTED)
-        {
-            startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:6476199611")));
-            if(ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, CALL_PHONE))
-            {
-
-            }
-            else
-            {
-                ActivityCompat.requestPermissions(this,new String[]{CALL_PHONE},REQUEST_PERMISSION);
-            }
-        } else {
-            requestCallPermission();
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions,  int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == REQUEST_PERMISSION) {
-
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Snackbar snackbar = Snackbar.make(findViewById(R.id.coordinatorLayout), R.string.snackbar_granted_permissions, Snackbar.LENGTH_LONG);
-                snackbar.show();
-                addNotification();
-            } else {
-                Snackbar snackbar = Snackbar.make(findViewById(R.id.coordinatorLayout), R.string.snackbar_denied_permissions, Snackbar.LENGTH_LONG);
-                snackbar.show();
-            }
-        }
-    }
-
     public void composeEmail(String[] addresses, String subject) {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto: utsav.sharma1211@gmail.com")); // only email apps should handle this
@@ -297,36 +237,6 @@ MainActivity extends AppCompatActivity implements NavigationView.OnNavigationIte
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
-    }
-
-    private void addNotification(){
-        CreateNotificationChannel();
-        NotificationCompat.Builder builder= new NotificationCompat.Builder(this,CHANNEL_ID)
-                .setSmallIcon(R.mipmap.ic_launcher_round)
-                .setContentTitle(getString(R.string.allow_call_perm));
-
-        Intent notificationIntent = new Intent(this, MainActivity.class);
-        PendingIntent contentIntent = PendingIntent.getActivity(this, 0,notificationIntent,PendingIntent.FLAG_UPDATE_CURRENT);
-        builder.setContentIntent(contentIntent);
-
-        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        manager.notify(0,builder.build());
-    }
-
-    private void CreateNotificationChannel(){
-
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
-            CharSequence name = "You have allower the Call Permission";
-            String description = "Permission granted for calling";
-            int importance = NotificationManager.IMPORTANCE_LOW;
-
-            NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID,name,importance);
-            notificationChannel.setDescription(description);
-            NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-            notificationManager.createNotificationChannel(notificationChannel);
-
-        }
-
     }
 
     private void checkConnection() {
