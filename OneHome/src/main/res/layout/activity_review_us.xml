@@ -12,8 +12,8 @@
 
     <RatingBar
         android:id="@+id/rating_bar"
-        android:layout_width="241dp"
-        android:layout_height="72dp"
+        android:layout_width="400dp"
+        android:layout_height="59dp"
         android:layout_above="@+id/Name"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -29,7 +29,9 @@
         android:layout_width="283dp"
         android:layout_height="59dp"
         android:layout_above="@+id/Phone"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginStart="61dp"
         android:layout_marginEnd="67dp"
         android:layout_marginBottom="25dp"
         android:hint="@string/NameString" />

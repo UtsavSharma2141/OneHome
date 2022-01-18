@@ -183,7 +183,7 @@ public class TemperatureFragment extends Fragment {
         mchildReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Integer message = snapshot.getValue(Integer.class);
+                Double message = snapshot.getValue(Double.class);
                 temperature.setText(message + "°C");
 
 
@@ -199,7 +199,7 @@ public class TemperatureFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                Integer message2 = snapshot.getValue(Integer.class);
+                Double message2 = snapshot.getValue(Double.class);
                 humidity.setText(message2 + "%");
 
             }

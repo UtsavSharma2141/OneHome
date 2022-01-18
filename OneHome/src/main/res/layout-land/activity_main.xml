@@ -39,12 +39,12 @@
 
             <Button
                 android:id="@+id/review_us"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:foregroundGravity="center"
                 android:gravity="center"
                 android:layout_gravity="center"
-                android:layout_margin="300dp"
+                android:layout_margin="320dp"
                 android:text="Review Us">
 
             </Button>
