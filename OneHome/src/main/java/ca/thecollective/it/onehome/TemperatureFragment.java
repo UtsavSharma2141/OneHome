@@ -54,12 +54,12 @@ public class TemperatureFragment extends Fragment {
     private final String CHANNEL_ID2 = "Notification";
     Switch temp_switch, humidity_switch;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    private DatabaseReference mrootReference = firebaseDatabase.getReference();
-    private DatabaseReference mchildReference = mrootReference.child("message");
+    private DatabaseReference mrootReference = firebaseDatabase.getReference().child("DHT22");
+    private DatabaseReference mchildReference = mrootReference.child("temperature");
 
     private FirebaseDatabase firebaseDatabase2 = FirebaseDatabase.getInstance();
-    private DatabaseReference mrootReference2 = firebaseDatabase.getReference();
-    private DatabaseReference mchildReference2 = mrootReference.child("message2");
+    private DatabaseReference mrootReference2 = firebaseDatabase.getReference().child("DHT22");
+    private DatabaseReference mchildReference2 = mrootReference.child("humidity");
 
 
     @Nullable
@@ -183,8 +183,8 @@ public class TemperatureFragment extends Fragment {
         mchildReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Double message = snapshot.getValue(Double.class);
-                temperature.setText(message + "°C");
+                Double temp = snapshot.getValue(Double.class);
+                temperature.setText(temp + "°C");
 
 
             }
@@ -198,9 +198,8 @@ public class TemperatureFragment extends Fragment {
         mchildReference2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                Double message2 = snapshot.getValue(Double.class);
-                humidity.setText(message2 + "%");
+                Double humi = snapshot.getValue(Double.class);
+                humidity.setText(humi + "%");
 
             }
 
