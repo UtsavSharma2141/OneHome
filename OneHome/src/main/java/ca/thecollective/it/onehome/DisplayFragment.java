@@ -165,7 +165,7 @@ public class DisplayFragment extends Fragment {
                     Toast.makeText(getActivity(), "Field is Empty", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(getActivity(), "Text: " + Message + "\n is sent to display", Toast.LENGTH_LONG).show();
-                    firebaseDatabase.getReference().child("Text").push().setValue(Message);
+                    firebaseDatabase.getReference().child("LCD").child("Text").setValue(Message);
                 }
             }
         });

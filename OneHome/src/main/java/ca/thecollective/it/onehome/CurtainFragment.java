@@ -19,10 +19,17 @@ import androidx.annotation.Nullable;
 import androidx.core.app.BundleCompat;
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class CurtainFragment extends Fragment {
 
     Button OpenButton;
     Button CloseButton;
+
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference mrootReference = firebaseDatabase.getReference().child("Curtain");
+    private DatabaseReference mchildReference = mrootReference.child("Status");
 
     @Nullable
     @Override
@@ -34,6 +41,7 @@ public class CurtainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(), getResources().getString(R.string.curtain_open), Toast.LENGTH_SHORT).show();
+                firebaseDatabase.getReference().child("Curtain").child("Status").setValue(1);
 
             }
         });
@@ -42,6 +50,7 @@ public class CurtainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(), getResources().getString(R.string.curtain_close), Toast.LENGTH_SHORT).show();
+                firebaseDatabase.getReference().child("Curtain").child("Status").setValue(0);
             }
         });
 
