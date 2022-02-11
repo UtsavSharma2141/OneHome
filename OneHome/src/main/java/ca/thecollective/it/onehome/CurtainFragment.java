@@ -41,7 +41,7 @@ public class CurtainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(), getResources().getString(R.string.curtain_open), Toast.LENGTH_SHORT).show();
-                firebaseDatabase.getReference().child("Curtain").child("Status").setValue(1);
+                firebaseDatabase.getReference().child("Curtain").child("Status").setValue("OPEN");
 
             }
         });
@@ -50,7 +50,7 @@ public class CurtainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(), getResources().getString(R.string.curtain_close), Toast.LENGTH_SHORT).show();
-                firebaseDatabase.getReference().child("Curtain").child("Status").setValue(0);
+                firebaseDatabase.getReference().child("Curtain").child("Status").setValue("CLOSE");
             }
         });
 

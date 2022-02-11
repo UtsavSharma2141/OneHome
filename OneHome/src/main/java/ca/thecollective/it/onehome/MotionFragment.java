@@ -26,6 +26,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 import ca.thecollective.it.onehome.MainActivity;
@@ -33,12 +35,15 @@ import ca.thecollective.it.onehome.MainActivity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.BundleCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.common.internal.GetServiceRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.connection.RequestResultCallback;
 
 import java.util.Calendar;
@@ -48,6 +53,7 @@ public class  MotionFragment extends Fragment {
 
     Button SetTimeButton;
     Button ResetTimeButton;
+    Switch toggleSwitch;
 
    /* private TextView position_text;              //added all these private types
     private Sensor proximitySensor;
@@ -55,12 +61,31 @@ public class  MotionFragment extends Fragment {
     private SensorManager sensorManager;
     private Vibrator vibrator;*/
 
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference mrootReference = firebaseDatabase.getReference().child("Motion");
+    private DatabaseReference mchildReference = mrootReference.child("control");
+
 
     @SuppressLint("ServiceCast")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_motion, container, false);
+
+        toggleSwitch = (Switch) view.findViewById(R.id.ToggleSwitch);
+        toggleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    firebaseDatabase.getReference().child("Motion").child("control").setValue("ON");
+
+                } else {
+                    firebaseDatabase.getReference().child("Motion").child("control").setValue("OFF");
+
+
+                }
+            }
+        });
 
 
             SensorManager sensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
