@@ -74,6 +74,7 @@ public class DisplayFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
+                    firebaseDatabase.getReference().child("LCD").child("Status").setValue(1);
                     switch1.setEnabled(true);
                     switch2.setEnabled(true);
                     switch3.setEnabled(true);
@@ -85,6 +86,7 @@ public class DisplayFragment extends Fragment {
                             .setAction("undo", mOnClickListener);
                             snackbar.show();
                 } else {
+                    firebaseDatabase.getReference().child("LCD").child("Status").setValue(0);
                     switch1.setEnabled(false);
                     switch2.setEnabled(false);
                     switch3.setEnabled(false);
@@ -101,11 +103,11 @@ public class DisplayFragment extends Fragment {
                 if (isChecked) {
                     Toast.makeText(getActivity(),
                             "Temperature Display is On", Toast.LENGTH_SHORT).show();
-                    firebaseDatabase.getReference().child("LCD").child("Status").setValue(1);
+                    firebaseDatabase.getReference().child("LCD").child("Temp").setValue(1);
                 } else {
                     Toast.makeText(getActivity(),
                             "Temperature Display is Off", Toast.LENGTH_SHORT).show();
-                    firebaseDatabase.getReference().child("LCD").child("Status").setValue(0);
+                    firebaseDatabase.getReference().child("LCD").child("Temp").setValue(0);
                 }
             }
         });
