@@ -61,6 +61,14 @@ public class TemperatureFragment extends Fragment {
     private DatabaseReference mrootReference2 = firebaseDatabase.getReference().child("DHT22");
     private DatabaseReference mchildReference2 = mrootReference.child("humidity");
 
+    private FirebaseDatabase firebaseDatabase3 = FirebaseDatabase.getInstance();
+    private DatabaseReference mrootReference3 = firebaseDatabase.getReference().child("DHT22");
+    private DatabaseReference mchildReference3 = mrootReference.child("max_temperature");
+
+    private FirebaseDatabase firebaseDatabase4 = FirebaseDatabase.getInstance();
+    private DatabaseReference mrootReference4 = firebaseDatabase.getReference().child("DHT22");
+    private DatabaseReference mchildReference4 = mrootReference.child("max_humidity");
+
 
     @Nullable
     @Override
@@ -106,6 +114,7 @@ public class TemperatureFragment extends Fragment {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 max_temp.setText(getString(R.string.set_max_temperature) + progress_value + "/" + temp_seekbar.getMax());
+                firebaseDatabase3.getReference().child("DHT22").child("max_temperature").setValue(progress_value);
                 temp_switch.setEnabled(true);
 
             }
@@ -132,6 +141,7 @@ public class TemperatureFragment extends Fragment {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 max_humidity.setText(getString(R.string.set_max_humidity) + progress_value2 + "/" + humidity_seekbar.getMax());
+                firebaseDatabase4.getReference().child("DHT22").child("max_humidity").setValue(progress_value2);
                 humidity_switch.setEnabled(true);
 
             }
