@@ -3,7 +3,7 @@
 <!--Dhruv Dave N01401657 Section A-->
 <!-- Sukhvir Singh Brar N01395820 Section A -->
 <!-- Utsav Sharma N01392141 Section A -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/display_frag"
@@ -34,7 +34,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="40dp"
+        android:weightSum="2"
         android:orientation="vertical">
 
         <com.google.android.material.switchmaterial.SwitchMaterial
@@ -63,11 +64,10 @@
 
         <ToggleButton
             android:id="@+id/toggleButton"
-            android:layout_width="match_parent"
+            style="@style/ThemeOverlay.AppCompat.Light"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="150sp"
-            android:layout_marginEnd="150sp"
-            android:layout_marginBottom="75sp"
+            android:layout_gravity="center"
             android:checked="false"
             android:text="@string/LockScreenButton"
             android:textOff="@string/off"
@@ -82,6 +82,7 @@
             android:layout_marginBottom="10sp"
             android:fontFamily="@font/tommy_soft"
             android:gravity="center"
+            android:padding="10dp"
             android:text="@string/Ringer_mode"
             android:textColor="@color/amber"
             android:textSize="30sp" />
@@ -89,15 +90,15 @@
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="80sp">
+            android:layout_marginBottom="80sp"
+            android:layout_gravity="center"
+            >
 
             <Button
                 android:id="@+id/silentmode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:layout_marginStart="0sp"
-                android:layout_marginEnd="104sp"
                 android:fontFamily="@font/tommy_soft"
                 android:textColor="@color/amber"
                 android:text="@string/unmute_button" />
@@ -107,8 +108,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:layout_marginStart="104sp"
-                android:layout_marginEnd="0sp"
+                android:layout_marginStart="150dp"
                 android:fontFamily="@font/tommy_soft"
                 android:textColor="@color/amber"
                 android:text="@string/Mute_button" />
@@ -116,15 +116,13 @@
 
         <Button
             android:id="@+id/ResetButton"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="135sp"
-            android:layout_marginEnd="135sp"
-            android:layout_marginBottom="0sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_gravity="center"
             android:backgroundTintMode="@color/white"
             android:fontFamily="@font/tommy_soft"
             android:gravity="center"
             android:text="@string/ResetAppButton"
             android:textColor="@color/amber" />
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>
