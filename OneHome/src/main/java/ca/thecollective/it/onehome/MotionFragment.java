@@ -42,8 +42,11 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.common.internal.GetServiceRequest;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.connection.RequestResultCallback;
 
 import java.util.Calendar;
@@ -54,6 +57,7 @@ public class  MotionFragment extends Fragment {
     Button SetTimeButton;
     Button ResetTimeButton;
     Switch toggleSwitch;
+    TextView live_status;
 
    /* private TextView position_text;              //added all these private types
     private Sensor proximitySensor;
@@ -65,6 +69,10 @@ public class  MotionFragment extends Fragment {
     private DatabaseReference mrootReference = firebaseDatabase.getReference().child("Motion");
     private DatabaseReference mchildReference = mrootReference.child("control");
 
+    private FirebaseDatabase firebaseDatabase2 = FirebaseDatabase.getInstance();
+    private DatabaseReference mrootReference2 = firebaseDatabase.getReference().child("Motion");
+    private DatabaseReference mchildReference2 = mrootReference.child("status");
+
 
     @SuppressLint("ServiceCast")
     @Nullable
@@ -72,6 +80,7 @@ public class  MotionFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_motion, container, false);
 
+            live_status = (TextView) view.findViewById(R.id.live_motion);
         toggleSwitch = (Switch) view.findViewById(R.id.ToggleSwitch);
         toggleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -151,6 +160,24 @@ public class  MotionFragment extends Fragment {
             return view;
 
     }
+
+    public void onStart() {
+        super.onStart();
+
+        mchildReference2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String status = snapshot.getValue(String.class);
+                live_status.setText("Motion Status:"+status);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
 
 
 

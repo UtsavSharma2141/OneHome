@@ -54,7 +54,21 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="150dp"
         android:text="@string/CloseButton" />
+
     </LinearLayout>
+
+    <TextView
+        android:padding="15dp"
+        android:id="@+id/live_curtain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:autoSizeTextType="uniform"
+        android:textColor="@color/amber"
+        android:gravity="center"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/CurtainOpeningSelection"
