@@ -54,8 +54,7 @@ import java.util.Calendar;
 
 public class  MotionFragment extends Fragment {
 
-    Button SetTimeButton;
-    Button ResetTimeButton;
+    Button emergencyButton;
     Switch toggleSwitch;
     TextView live_status;
 
@@ -81,6 +80,7 @@ public class  MotionFragment extends Fragment {
             View view = inflater.inflate(R.layout.fragment_motion, container, false);
 
             live_status = (TextView) view.findViewById(R.id.live_motion);
+            emergencyButton = (Button) view.findViewById(R.id.EmergencyButton);
         toggleSwitch = (Switch) view.findViewById(R.id.ToggleSwitch);
         toggleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -93,6 +93,16 @@ public class  MotionFragment extends Fragment {
 
 
                 }
+            }
+
+        });
+        emergencyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String number = "911";
+                Uri call = Uri.parse("tel:" + number);
+                Intent intentCall = new Intent(Intent.ACTION_DIAL, call);
+                startActivity(intentCall);
             }
         });
 
@@ -131,22 +141,6 @@ public class  MotionFragment extends Fragment {
         sensorManager= (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
         vibrator = (Vibrator) getActivity().getSystemService((Context.VIBRATOR_SERVICE));*/
 
-
-            Button SetTimeButton = (Button) view .findViewById(R.id.SetTimeButton);
-            SetTimeButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(getActivity(), "Setting new time", Toast.LENGTH_SHORT).show();
-
-                }
-            });
-            Button ResetTimeButton = (Button) view.findViewById(R.id.ResetTimeButton);
-            ResetTimeButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(getActivity(),"Resetting the time", Toast.LENGTH_SHORT).show();
-                }
-            });
 
            /* if (sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY)!=null)
             {

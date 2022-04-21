@@ -66,31 +66,6 @@
         android:textStyle="bold" />
 
     <LinearLayout
-        android:layout_margin="1dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
-
-        <Button
-            android:id="@+id/SetTimeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="50dp"
-            android:textStyle="bold"
-            android:text="Set" />
-
-        <Button
-            android:id="@+id/ResetTimeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Reset"
-            android:layout_gravity="right"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <LinearLayout
         android:layout_margin="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -112,7 +87,7 @@
             android:id="@+id/EmergencyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-           android:layout_margin="30dp"
+           android:layout_margin="10dp"
             android:text="Emergency Call"
             android:layout_gravity="center"
             android:textAlignment="center"
